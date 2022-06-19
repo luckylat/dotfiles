@@ -1,24 +1,30 @@
 " ---Vundle Plugin manager---
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-" --Plugin--
-" `Plugin '[Plugin Author]/[Plugin repo]'`
-
-" -shows git diff-
-Plugin 'airblade/vim-gitgutter'
-
-" -tree explorer-
-Plugin 'scrooloose/nerdtree'
 
 
 
-call vundle#end()
-filetype plugin indent on
+if glob("~/.vim/bundle/Vundle.vim") != ""
+	filetype off
+
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+
+	Plugin 'VundleVim/Vundle.vim'
+
+	" --Plugin--
+	" `Plugin '[Plugin Author]/[Plugin repo]'`
+
+	" -shows git diff-
+	Plugin 'airblade/vim-gitgutter'
+
+	" -tree explorer-
+	Plugin 'scrooloose/nerdtree'
+
+
+
+	call vundle#end()
+	filetype plugin indent on
+endif
 
 
 
@@ -35,7 +41,8 @@ set re=0
 
 set encoding=utf-8
 
-set tabstop=2
+set tabstop=4
+set shiftwidth=4
 
 " ---UI---
 
