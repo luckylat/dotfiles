@@ -1,23 +1,23 @@
 " ---Vundle Plugin manager---
 if glob("~/.vim/bundle/Vundle.vim") != ""
-	filetype off
+    filetype off
 
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
-	Plugin 'VundleVim/Vundle.vim'
+    Plugin 'VundleVim/Vundle.vim'
 
-	" --Plugin--
-	" `Plugin '[Plugin Author]/[Plugin repo]'`
+    " --Plugin--
+    " `Plugin '[Plugin Author]/[Plugin repo]'`
 
-	" -shows git diff-
-	Plugin 'airblade/vim-gitgutter'
+    " -shows git diff-
+    Plugin 'airblade/vim-gitgutter'
 
-	" -tree explorer-
-	Plugin 'scrooloose/nerdtree'
+    " -tree explorer-
+    Plugin 'scrooloose/nerdtree'
 
-	call vundle#end()
-	filetype plugin indent on
+    call vundle#end()
+    filetype plugin indent on
 endif
 
 
@@ -28,7 +28,7 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " ---clipboard---
 if $USER=='vagrant'
-	set clipboard=unnamedplus,autoselect
+    set clipboard=unnamedplus,autoselect
 endif
 
 " ---coding---
