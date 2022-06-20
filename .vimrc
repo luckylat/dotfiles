@@ -1,8 +1,4 @@
 " ---Vundle Plugin manager---
-set nocompatible
-
-
-
 if glob("~/.vim/bundle/Vundle.vim") != ""
 	filetype off
 
