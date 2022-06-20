@@ -20,8 +20,6 @@ if glob("~/.vim/bundle/Vundle.vim") != ""
 	" -tree explorer-
 	Plugin 'scrooloose/nerdtree'
 
-
-
 	call vundle#end()
 	filetype plugin indent on
 endif
@@ -35,7 +33,10 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " avoid 'redrawtime' exceeded in .ts
 set re=0
 
-
+" ---clipboard---
+if $USER=='vagrant'
+	set clipboard=unnamedplus,autoselect
+endif
 
 " ---coding---
 
