@@ -26,12 +26,9 @@ endif
 
 
 
-" mapping
+" ---mapping---
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-
-" avoid 'redrawtime' exceeded in .ts
-set re=0
 
 " ---clipboard---
 if $USER=='vagrant'
@@ -58,4 +55,5 @@ set ruler
 
 syntax on
 
-
+" avoid 'redrawtime' exceeded in .ts
+set re=0
