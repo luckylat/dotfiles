@@ -15,6 +15,9 @@ if glob("~/.vim/bundle/Vundle.vim") != ""
 
     " -tree explorer-
     Plugin 'scrooloose/nerdtree'
+    
+    " -status/tab line-
+    Plugin 'itchyny/lightline.vim'
 
     call vundle#end()
     filetype plugin indent on
@@ -48,6 +51,16 @@ set title
 
 set ruler
 
+set background=dark
+
+" --statusline /w lightline--
+set laststatus=2
+
+set noshowmode
+
+let g:lightline = {
+            \ 'colorscheme': 'wombat'
+            \ }
 
 " ---Graphic---
 
