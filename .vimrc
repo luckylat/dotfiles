@@ -23,7 +23,8 @@ if glob("~/.vim/bundle/Vundle.vim") != ""
     filetype plugin indent on
 endif
 
-
+" ---plugin settings---
+let NERDTreeShowHidden=1
 
 " ---mapping---
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
