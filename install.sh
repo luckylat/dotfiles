@@ -5,7 +5,13 @@ set -eu
 BASEDIR=$(dirname $0)
 cd $BASEDIR
 
-for f in .??*; do
-    if [ "$f" = ".git" ] && continue
-    ln -snfv ${PWD}/"$f" ~/
+IFS=$'\n'
+
+for f in `find . -type d -name .git -prune -o -type f -print`; do
+    [ $f = "install.sh" ] && continue
+    [[ $f =~ "swp" ]] && continue
+    [ "$f" = ".git" ] && continue
+    # if folder does not exist, make folder
+    mkdir -p ~/"$(dirname $f)"
+    ln -snfv ${PWD}/"$f" ~/"$f"
 done
