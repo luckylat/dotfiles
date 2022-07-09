@@ -8,8 +8,8 @@ cd $BASEDIR
 IFS=$'\n'
 
 for f in `find . -type d -name .git -prune -o -type f -print`; do
-    [ $f = "install.sh" ] && continue
-    [[ $f =~ "swp" ]] && continue
+    [[ $f =~ "install.sh" ]] && continue
+    [[ $f =~ ".swp" ]] && continue
     [ "$f" = ".git" ] && continue
     # if folder does not exist, make folder
     mkdir -p ~/"$(dirname $f)"
