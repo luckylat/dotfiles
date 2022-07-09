@@ -18,7 +18,11 @@ if glob("~/.vim/bundle/Vundle.vim") != ""
     
     " -status/tab line-
     Plugin 'itchyny/lightline.vim'
-
+    
+    " -specific language-
+    " MarkDown
+    Plugin 'iamcco/markdown-preview.nvim'
+    
     call vundle#end()
     filetype plugin indent on
 endif
