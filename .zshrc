@@ -1,3 +1,10 @@
+# zsh-plugins for mac
+if type brew &> /dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    autoload -Uz compinit
+    compinit
+fi
+
 # starship
 if type "starship" > /dev/null 2>&1; then
     eval "$(starship init zsh)"
