@@ -40,7 +40,7 @@ endif
 
 " ---clipboard---
 if $USER=='vagrant'
-    set clipboard=unnamedplus,autoselect
+    set clipboard=unnamedplus
 endif
 
 " ---coding---
