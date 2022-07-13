@@ -21,7 +21,7 @@ fi
 
 # alias
 if type "tree" > /dev/null 2>&1; then
-    alias tree="tree -I node_modules -L 3"
+    alias tree="tree -I .git -I node_modules -L 3"
 fi
 
 if type "exa" > /dev/null 2>&1; then
