@@ -28,7 +28,9 @@ if glob("~/.vim/bundle/Vundle.vim") != ""
 endif
 
 " ---plugin settings---
+" --NERDTree--
 let NERDTreeShowHidden=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ---mapping---
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -40,6 +42,8 @@ endif
 
 " ---clipboard---
 if $USER=='vagrant'
+    set clipboard=unnamedplus,autoselect
+elseif has('mac') 
     set clipboard=unnamedplus,autoselect
 endif
 
