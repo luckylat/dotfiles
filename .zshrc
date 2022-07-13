@@ -28,4 +28,12 @@ if type "exa" > /dev/null 2>&1; then
     alias ls=exa --git
 fi
 
+# VBox(for vagrant)
+
+if [ $USER = 'vagrant' ]; then
+    VBoxClient --clipboard
+fi
+
+
 export TERM=xterm-256color
+
