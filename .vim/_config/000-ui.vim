@@ -18,10 +18,14 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"
 endif
 
-" --statusline /w lightline--
+" --statusLine--
 set laststatus=2
 
 set noshowmode
+
+" --commandLine--
+set wildmenu
+set wildmode=longest
 
 " ---Graphic---
 
