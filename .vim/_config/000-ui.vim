@@ -20,7 +20,6 @@ endif
 
 " --statusLine--
 set laststatus=2
-
 set noshowmode
 
 " --commandLine--
@@ -30,4 +29,3 @@ set wildmode=longest:full
 " ---Graphic---
 
 syntax on
-
