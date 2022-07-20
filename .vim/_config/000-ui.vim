@@ -25,7 +25,7 @@ set noshowmode
 
 " --commandLine--
 set wildmenu
-set wildmode=longest
+set wildmode=longest:full
 
 " ---Graphic---
 
