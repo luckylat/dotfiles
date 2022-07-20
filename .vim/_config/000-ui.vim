@@ -8,6 +8,11 @@ set ruler
 
 set background=dark
 
+set list
+set listchars=tab:<->,multispace:-,trail:#
+hi NonText ctermbg=None ctermfg=59 guibg=None guifg=None
+hi SpecialKey ctermbg=None ctermfg=59-guibg=None-guifg=None
+
 " --cursor--
 if has('vim_starting')
     " in insert mode
