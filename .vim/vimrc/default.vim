@@ -25,7 +25,11 @@ if glob("~/.vim/bundle/Vundle.vim") != ""
     " -status/tab line-
     Plugin 'itchyny/lightline.vim'
     
-    " -specific language-
+    " -language server-
+    Plugin 'prabirshrestha/vim-lsp'
+    Plugin 'mattn/vim-lsp-settings'
+
+    " specific language
     " MarkDown
     Plugin 'iamcco/markdown-preview.nvim'
     
