@@ -34,3 +34,6 @@ set wildmode=longest:full
 " ---Graphic---
 
 syntax on
+
+" ---colorScheme---
+colorscheme molokai
