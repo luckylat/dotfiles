@@ -20,10 +20,9 @@ if !isdirectory(s:dein_repo_dir)
 endif
 let &rtp = s:dein_repo_dir . ',' . &rtp
 
+call dein#begin(s:dein_dir)
 
-call dein#begin(expand('~/.cache/dein'))
-
-call dein#add(expand('~/.cache/dein/repos/github.com/Shougo/dein.vim'))
+call dein#add(s:dein_repo_dir)
 " -- plugins --
 " dein#add([Plugin Author]/[Pugin repo])
 
