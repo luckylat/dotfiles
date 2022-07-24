@@ -34,6 +34,11 @@ if [ $USER = 'vagrant' ]; then
     VBoxClient --clipboard
 fi
 
+# read .zprofile
+if [ -e ${HOME}/.zprofile ]; then
+    source ~/.zprofile
+fi
+
 
 export TERM=xterm-256color
 
