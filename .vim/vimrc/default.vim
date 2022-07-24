@@ -1,16 +1,28 @@
 " ---global setting---
 
+scriptencoding utf-8
 set encoding=utf-8
 
-" --- dein Plugin Manager---
+
 if &compatible
     set nocompatible
 endif
 
-set rtp+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-call dein#begin(expand('~/.cache/dein'))
+" --- dein Plugin Manager---
 
-call dein#add(expand('~/.cache/dein/repos/github.com/Shougo/dein.vim'))
+" -- dein install --
+" https://qiita.com/kawaz/items/ee725f6214f91337b42b
+let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.config') : $XDG_CACHE_HOME
+let s:dein_dir = s:cache_home . '/dein'
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if !isdirectory(s:dein_repo_dir)
+    call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+endif
+let &rtp = s:dein_repo_dir . ',' . &rtp
+
+call dein#begin(s:dein_dir)
+
+call dein#add(s:dein_repo_dir)
 " -- plugins --
 " dein#add([Plugin Author]/[Pugin repo])
 

@@ -10,8 +10,8 @@ set background=dark
 
 set list
 set listchars=tab:<->,multispace:-,trail:#
-hi NonText ctermbg=None ctermfg=59 guibg=None guifg=None
-hi SpecialKey ctermbg=None ctermfg=59-guibg=None-guifg=None
+hi NonText ctermbg=NONE ctermfg=59 guibg=NONE guifg=NONE
+hi SpecialKey ctermbg=NONE ctermfg=59-guibg=NONE-guifg=NONE
 
 " --cursor--
 if has('vim_starting')
