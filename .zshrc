@@ -28,6 +28,10 @@ if type "exa" > /dev/null 2>&1; then
     alias ls=exa --git
 fi
 
+alias ga="git add"
+alias gc="git cz"
+alias gp="git push"
+
 # VBox(for vagrant)
 
 if [ $USER = 'vagrant' ]; then
