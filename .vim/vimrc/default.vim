@@ -46,7 +46,7 @@ call dein#add('iamcco/markdown-preview.nvim')
 
 " -- colorScheme --
 call dein#add('tomasr/molokai')
-
+"call dein#add('NLKNguyen/papercolor-theme')
 
 " -- --
 call dein#end()

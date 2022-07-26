@@ -37,3 +37,4 @@ syntax on
 
 " ---colorScheme---
 colorscheme molokai
+"colorscheme PaperColor
