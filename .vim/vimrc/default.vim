@@ -12,7 +12,7 @@ endif
 
 " -- dein install --
 " https://qiita.com/kawaz/items/ee725f6214f91337b42b
-let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.config') : $XDG_CACHE_HOME
+let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir = s:cache_home . '/dein'
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if !isdirectory(s:dein_repo_dir)
@@ -22,7 +22,7 @@ let &rtp = s:dein_repo_dir . ',' . &rtp
 
 call dein#begin(s:dein_dir)
 
-call dein#add(s:dein_repo_dir)
+call dein#add('Shougo/dein.vim')
 " -- plugins --
 " dein#add([Plugin Author]/[Pugin repo])
 
@@ -41,7 +41,7 @@ call dein#add('mattn/vim-lsp-settings')
 
 " specific language
 " MarkDown
-call dein#add('iamcco/markdown-preview.nvim')
+call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'sh -c "cd app & yarn install"'})
 
 
 " -- colorScheme --
