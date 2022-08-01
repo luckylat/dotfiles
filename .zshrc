@@ -32,6 +32,9 @@ alias ga="git add"
 alias gc="git cz"
 alias gp="git push"
 
+alias zshrc="vim ~/.zshrc; source ~/.zshrc"
+
+alias vp='vim -c ":e #<1"'
 # VBox(for vagrant)
 
 if [ $USER = 'vagrant' ]; then
@@ -42,7 +45,6 @@ fi
 if [ -e ${HOME}/.zprofile ]; then
     source ~/.zprofile
 fi
-
 
 export TERM=xterm-256color
 
