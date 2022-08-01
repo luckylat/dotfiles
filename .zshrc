@@ -1,3 +1,6 @@
+# load start
+echo "loading zshrc..."
+
 # zsh-plugins for mac
 if type brew &> /dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -48,3 +51,5 @@ fi
 
 export TERM=xterm-256color
 
+# load end
+echo "done."
