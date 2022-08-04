@@ -43,6 +43,8 @@ call dein#add('mattn/vim-lsp-settings')
 " MarkDown
 call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'sh -c "cd app & yarn install"'})
 
+" typescript
+call dein#add('leafgarland/typescript-vim')
 
 " -- colorScheme --
 call dein#add('tomasr/molokai')
