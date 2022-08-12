@@ -7,7 +7,7 @@ cd $BASEDIR
 
 IFS=$'\n'
 
-for f in `find . -type d -name .git -prune -o -type f -print`; do
+for f in `find . -type d -prune -o -type f -print`; do
     [[ $f =~ ".md" ]] && continue
     [[ $f =~ "install.sh" ]] && continue
     [[ $f =~ ".swp" ]] && continue
@@ -16,3 +16,4 @@ for f in `find . -type d -name .git -prune -o -type f -print`; do
     mkdir -p ~/"$(dirname $f)"
     ln -snfv ${PWD}/"$f" ~/"$f"
 done
+
