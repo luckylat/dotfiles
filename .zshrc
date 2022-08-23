@@ -37,6 +37,7 @@ alias gp="git push"
 
 alias zshrc="vim ~/.zshrc; source ~/.zshrc"
 
+alias vim="noglob vim"
 alias vp='vim -c ":e #<1"'
 # VBox(for vagrant)
 
