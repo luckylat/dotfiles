@@ -12,6 +12,7 @@ augroup END
 augroup tab_language
     autocmd!
     
+    autocmd FileType cpp setlocal sw=2 ts=2
     autocmd FileType javascript setlocal sw=2 ts=2
     autocmd FileType typescript setlocal sw=2 ts=2 re=0
     autocmd FileType typescriptreact setlocal sw=2 ts=2 re=0
