@@ -39,6 +39,9 @@ alias zshrc="vim ~/.zshrc; source ~/.zshrc"
 
 alias vim="noglob vim"
 alias vp='vim -c ":e #<1"'
+
+alias vag="vagrant"
+
 # VBox(for vagrant)
 
 if [ $USER = 'vagrant' ]; then
