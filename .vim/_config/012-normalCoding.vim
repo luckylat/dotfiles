@@ -7,3 +7,8 @@ augroup folding
     au BufWinEnter * silent loadview
 augroup END
 
+augroup fold_language
+    autocmd!
+    au FileType tex setlocal foldmethod=indent
+augroup END
+
