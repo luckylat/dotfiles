@@ -28,7 +28,11 @@ if type "tree" > /dev/null 2>&1; then
 fi
 
 if type "exa" > /dev/null 2>&1; then
-    alias ls=exa --git
+    alias "ls=exa --git"
+fi
+
+if type "lazygit" > /dev/null 2>&1; then
+    alias lg="lazygit"
 fi
 
 alias ga="git add"
