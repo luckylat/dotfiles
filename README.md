@@ -3,12 +3,9 @@
 ### author
 luckYrat / CleyL
 
-### thought
-- The dotfiles is only toolbox, don't connect directly.
-- put shortcut to default place as much as possible.
-
+### feature
+using [chezmoi](https://github.com/twpayne/chezmoi)
 
 ### Consutitution
 TBD (generate automatically)
-
 
