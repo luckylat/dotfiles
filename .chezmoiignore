@@ -2,5 +2,6 @@
 Library/Application Support/lazygit/config.yml
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
+installer/ubuntu/**
 .config/lazygit/config.yml
 {{ end }}
