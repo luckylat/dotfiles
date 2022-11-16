@@ -1,0 +1,28 @@
+# This is Git's per-user configuration file.
+[user]
+	name = luckylat
+	email = lacklat.key@gmail.com
+[alias]
+    tree =  log --graph --pretty=format:'%x09%C(auto)%h %C(cyan)%ar%Creset%x09%C(blue)%an:%x09%C(green)"%s" %C(auto)%d'
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+
