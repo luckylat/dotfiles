@@ -5,3 +5,9 @@ customCommands:
     context: "files"
     loadingText: "opening commitizen - commit tool"
     subprocess: true
+
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
