@@ -5,13 +5,9 @@ set -e
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
 
 if type "lazygit" > /dev/null 2>&1; then
-    # version check
-    CURRENT_LAZYGIT_VERSION=$(lazygit --version | sed -e "s/version=//g" | sed -e "s/,//g" | awk '{print $6}' )
-    if [[ CURRENT_LAZYGIT_VERSION -eq LAZYGIT_VERSION ]] then
-        echo Already Installed!
-        lazygit --version
-        return
-    fi
+    echo Already Installed!
+    lazygit --version
+    return
 fi
 
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
