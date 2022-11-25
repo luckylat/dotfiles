@@ -6,4 +6,5 @@ Library
 {{ if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
 .config/lazygit/config.yml
+.config/alacritty
 {{ end }}
