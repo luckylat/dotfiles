@@ -7,4 +7,6 @@ Library
 .chezmoiscripts/linux/**
 .config/lazygit/config.yml
 .config/alacritty
+.xinitrc
 {{ end }}
+
