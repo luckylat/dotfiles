@@ -26,6 +26,9 @@ call dein#add('Shougo/dein.vim')
 " -- plugins --
 " dein#add([Plugin Author]/[Pugin repo])
 
+" -chezmoi helper-
+call dein#add('alker0/chezmoi.vim')
+
 " -show git diff-
 call dein#add('airblade/vim-gitgutter')
 
