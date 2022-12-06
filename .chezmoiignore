@@ -8,5 +8,6 @@ Library
 .config/lazygit/config.yml
 .config/alacritty
 .xinitrc
+.xprofile
 {{ end }}
 
