@@ -46,6 +46,8 @@ alias vp='vim -c ":e #<1"'
 
 alias vag="vagrant"
 
+alias ce="chezmoi edit"
+
 # VBox(for vagrant)
 
 if [ $USER = 'vagrant' ]; then
