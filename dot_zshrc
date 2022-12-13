@@ -8,6 +8,19 @@ if type brew &> /dev/null; then
     compinit
 fi
 
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-completions"
+
+if ! zplug check --verbose; then
+   printf "Install?[y/N]: "
+   if read -q; then
+       echo; zplug install
+   fi
+fi
+
+zplug load --verbose
+
 # command history
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=1000
