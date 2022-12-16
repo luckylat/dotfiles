@@ -67,6 +67,11 @@ if [ $USER = 'vagrant' ]; then
     VBoxClient --clipboard
 fi
 
+#read .zshenv
+if [ -e ${HOME}/.zshenv ]; then
+    source ~/.zshenv
+fi
+
 # read .zprofile
 if [ -e ${HOME}/.zprofile ]; then
     source ~/.zprofile
