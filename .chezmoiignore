@@ -4,8 +4,11 @@ README.md
 Library
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
-.chezmoiscripts/linux/**
 .config/lazygit/config.yml
+
+.chezmoiscripts/linux/**
+
+.config/awesome
 .config/alacritty
 .xinitrc
 .xprofile
