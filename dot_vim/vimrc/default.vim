@@ -42,6 +42,9 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('prabirshrestha/vim-lsp')
 call dein#add('mattn/vim-lsp-settings')
 
+" -style checker-
+call dein#add('lilydjwg/colorizer')
+
 " specific language
 " MarkDown
 call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'], 'build': 'sh -c "cd app & yarn install"'})
