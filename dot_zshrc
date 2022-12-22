@@ -21,6 +21,11 @@ fi
 
 zplug load --verbose
 
+# ulimit
+ulimit -Hs 131072
+ulimit -s 131072
+
+
 # command history
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=1000
