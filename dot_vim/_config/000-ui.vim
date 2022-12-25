@@ -10,6 +10,11 @@ set background=dark
 
 set list
 set listchars=tab:<->,multispace:-,trail:#
+augroup listchars_language
+    autocmd!
+    au FileType lua setlocal listchars=tab:<->,multispace:`,trail:#
+augroup END
+
 hi NonText ctermbg=NONE ctermfg=59 guibg=NONE guifg=NONE
 hi SpecialKey ctermbg=NONE ctermfg=59-guibg=NONE-guifg=NONE
 
