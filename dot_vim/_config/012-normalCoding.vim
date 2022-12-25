@@ -3,9 +3,11 @@ set foldlevel=100 "magic number
 
 augroup folding
     autocmd!
-    au BufWinLeave * mkview
-    au BufWinEnter * silent loadview
+    au BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    au BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
 augroup END
+set viewoptions-=options
+
 
 augroup fold_language
     autocmd!
