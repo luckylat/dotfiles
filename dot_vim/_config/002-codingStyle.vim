@@ -17,5 +17,7 @@ augroup tab_language
     autocmd FileType typescript setlocal sw=2 ts=2 re=0
     autocmd FileType typescriptreact setlocal sw=2 ts=2 re=0
     
+    autocmd FileType rasi setlocal sw=2 ts=2
+
     autocmd FileType make setlocal noexpandtab
 augroup END
