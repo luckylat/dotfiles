@@ -63,10 +63,8 @@ alias ga="git add"
 alias gc="git cz"
 alias gp="git push"
 
-alias zshrc="vim ~/.zshrc; source ~/.zshrc"
-
-alias vim="noglob vim"
-alias vp='vim -c ":e #<1"'
+alias vim="noglob nvim"
+alias vp='nvim -c ":e #<1"'
 
 alias vag="vagrant"
 
