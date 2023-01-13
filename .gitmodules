@@ -1,3 +1,6 @@
 [submodule "alacritty-theme"]
 	path = alacritty-theme
 	url = https://github.com/eendroroy/alacritty-theme
+[submodule "dot_config/alacritty/alacritty-theme"]
+	path = dot_config/alacritty/alacritty-theme
+	url = https://github.com/eendroroy/alacritty-theme/
