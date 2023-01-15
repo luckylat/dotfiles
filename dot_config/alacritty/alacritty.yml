@@ -767,6 +767,9 @@ key_bindings:
   #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
   #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop    }
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
+  #
+  - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
+  - { key: Return,   mods: Control, chars: "\x1b[13;5u" }
 
   # Vi Mode
   #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
