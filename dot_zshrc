@@ -12,6 +12,10 @@ source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions"
 
+zplug "zsh-users/zsh-autosuggestions"
+bindkey '^[[13;2u' autosuggest-accept
+
+
 if ! zplug check --verbose; then
    printf "Install?[y/N]: "
    if read -q; then
