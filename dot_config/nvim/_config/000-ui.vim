@@ -6,6 +6,8 @@ set title
 
 set ruler
 
+set cursorline
+
 set background=dark
 
 set list
