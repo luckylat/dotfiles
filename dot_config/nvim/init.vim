@@ -54,7 +54,8 @@ call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.mar
 call dein#add('leafgarland/typescript-vim')
 
 " -- colorScheme --
-call dein#add('tomasr/molokai')
+call dein#add('folke/tokyonight.nvim')
+"call dein#add('tomasr/molokai')
 "call dein#add('NLKNguyen/papercolor-theme')
 
 " -- --

@@ -6,6 +6,8 @@ set title
 
 set ruler
 
+set cursorline
+
 set background=dark
 
 set list
@@ -41,5 +43,5 @@ set wildmode=longest:full
 syntax on
 
 " ---colorScheme---
-colorscheme molokai
+colorscheme tokyonight
 "colorscheme PaperColor

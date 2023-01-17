@@ -8,6 +8,28 @@ if type brew &> /dev/null; then
     compinit
 fi
 
+source ~/.zplug/init.zsh
+
+zplug "zsh-users/zsh-completions"
+
+zplug "zsh-users/zsh-autosuggestions"
+bindkey '^[[13;2u' autosuggest-accept
+
+
+if ! zplug check --verbose; then
+   printf "Install?[y/N]: "
+   if read -q; then
+       echo; zplug install
+   fi
+fi
+
+zplug load --verbose
+
+# ulimit
+ulimit -Hs 131072
+ulimit -s 131072
+
+
 # command history
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=1000
@@ -19,7 +41,13 @@ setopt EXTENDED_HISTORY
 if type "starship" > /dev/null 2>&1; then
     eval "$(starship init zsh)"
 else
-    echo "Starship is not installed."
+    echo "Not Found: Starship is not installed."
+fi
+
+if type "zoxide" > /dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+else
+    echo "Not Found: zoxide is not installed."
 fi
 
 # alias
@@ -39,17 +67,22 @@ alias ga="git add"
 alias gc="git cz"
 alias gp="git push"
 
-alias zshrc="vim ~/.zshrc; source ~/.zshrc"
-
-alias vim="noglob vim"
-alias vp='vim -c ":e #<1"'
+alias vim="noglob nvim"
+alias vp='nvim -c ":e #<1"'
 
 alias vag="vagrant"
+
+alias ce="chezmoi edit"
 
 # VBox(for vagrant)
 
 if [ $USER = 'vagrant' ]; then
     VBoxClient --clipboard
+fi
+
+#read .zshenv
+if [ -e ${HOME}/.zshenv ]; then
+    source ~/.zshenv
 fi
 
 # read .zprofile
@@ -62,6 +95,11 @@ export GPG_TTY=$TTY
 
 export TERM=xterm-256color
 export EDITOR=vim
+
+# start X
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec startx
+fi
 
 # load end
 echo "done."

@@ -4,7 +4,7 @@ set foldlevel=100 "magic number
 augroup folding
     autocmd!
     au BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-    au BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+    au BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
 augroup END
 set viewoptions-=options
 

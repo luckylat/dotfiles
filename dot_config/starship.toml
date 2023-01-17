@@ -1,3 +1,6 @@
+[directory]
+truncation_symbol = ".../"
+
 [[battery.display]]
 threshold = 100
 style = "bold yellow"

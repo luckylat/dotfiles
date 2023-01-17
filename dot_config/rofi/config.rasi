@@ -1,0 +1,46 @@
+configuration {
+  modes: [ combi ];
+  combi-modes: [ window, drun, run ];
+
+  terminal: "alacritty";
+
+  // key-binding like vim
+  kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+  kb-row-down: "Down,Control+j";
+  kb-accept-entry: "Control+m,Return,KP_Enter";
+  kb-remove-to-eol: "Control+Shift+e";
+  // kb-mode-next: "Shift+Right,Control+Tab,Control+l";
+  // kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
+  kb-remove-char-back: "BackSpace";
+
+
+}
+
+//@theme "gruvbox-dark"
+@theme "/usr/share/rofi/themes/lb.rasi"
+
+/* Insert theme modifications after this */
+entry {
+  placeholder: "Type Here";
+  cursor-color: rgb(220,20,60);
+  cursor-width: 8px;
+}
+
+/* 
+entry, element-text {
+  text-color: red;
+  background-color: rgb(0,0,255);
+}
+*/
+
+element {
+  orientation: horizontal;
+  children: [ element-text, element-icon ];
+  spacing: 5px;
+}
+
+element-icon {
+  size: 2.5em;
+}
+
+
