@@ -1,16 +1,19 @@
 # load start
 echo "loading zshrc..."
 
+
+# -- zsh plugins
 # zsh-plugins for mac
 if type brew &> /dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    autoload -Uz compinit
-    compinit
 fi
 
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions"
+FPATH={{ .rust.cargo_completions }}:$FPATH
+autoload -Uz compinit
+compinit
 
 zplug "zsh-users/zsh-autosuggestions"
 bindkey '^[[13;2u' autosuggest-accept
@@ -24,6 +27,8 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
+# --
 
 # ulimit
 ulimit -Hs 131072
