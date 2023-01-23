@@ -225,6 +225,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             require("widgets.awesome-wm-widgets-e.brightness-widget.brightness"){
+                base = 25,
                 tooltip = true,
             },
             require("widgets.awesome-wm-widgets-e.battery-widget.battery")(),
