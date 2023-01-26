@@ -55,14 +55,7 @@ beautiful.init("~/.config/awesome/themes/custom/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 
-local apps = {
-    terminal = "alacritty",
-    editor = os.getenv("EDITOR") or "nano"
-}
-
-local cmds = {
-    editfile = apps.terminal .. " -e " .. apps.editor
-}
+local val = require("constraints")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -94,18 +87,7 @@ awful.layout.layouts = {
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
-myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", apps.terminal .. " -e man awesome" },
-   { "edit config", cmds.editfile .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
-}
-
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", apps.terminal }
-                                  }
-                        })
+local mymainmenu = require("menus.default")
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -115,7 +97,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -- praisewidget.text = "It's a widget"
 
 -- Menubar configuration
-menubar.utils.terminal = apps.terminal -- Set the terminal for applications that require it
+menubar.utils.terminal = val.apps.terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- {{{ Wibar
@@ -295,7 +277,7 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(apps.terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn(val.apps.terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
