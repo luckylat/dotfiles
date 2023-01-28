@@ -206,6 +206,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            require("widgets.awesome-wm-widgets-e.net-speed-widget.net-speed")(),
             require("widgets.awesome-wm-widgets-e.brightness-widget.brightness"){
                 base = 25,
                 tooltip = true,
