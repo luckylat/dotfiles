@@ -30,6 +30,18 @@ zplug load --verbose
 
 # --
 
+# -- fzf function
+
+fccp() {
+    local cpfile
+
+    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" \) -not -path '{{ .cp.library }}/test/*' -type f -print 2> /dev/null | fzf)
+    cat $cpfile | xsel -b
+    echo "Copied $cpfile"
+
+}
+
+
 # ulimit
 ulimit -Hs 131072
 ulimit -s 131072
