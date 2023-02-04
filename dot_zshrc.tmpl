@@ -30,15 +30,26 @@ zplug load --verbose
 
 # --
 
+# util function
 # -- fzf function
 
-fccp() {
+ccp() {
     local cpfile
 
     cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" \) -not -path '{{ .cp.library }}/test/*' -type f -print 2> /dev/null | fzf)
-    cat $cpfile | xsel -b
-    echo "Copied $cpfile"
+    if type "oj-bundle" > /dev/null 2>&1; then
+        oj-bundle $cpfile | xsel -b
+        echo "Copied $cpfile (by oj-bundle)"
+    else
+        cat $cpfile | xsel -b
+        echo "Copied $cpfile (by cat)"
+    fi
 
+}
+
+# -- other function
+fcp() {
+    cat $1 | xsel -b
 }
 
 
