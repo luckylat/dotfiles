@@ -1,0 +1,44 @@
+# --- Required
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# --- Syntax
+[[plugins]]
+repo = 'alker0/chezmoi.vim'
+
+[[plugins]]
+repo = 'Fymyte/rasi.vim'
+
+# --- Git
+# -- Diff
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# --- Tree Explorer
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# --- Language Server
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+# --- Style Checker
+[[plugins]]
+repo = 'lilydjwg/colorizer'
+
+# --- Specific Language
+# -- TypeScript
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+# --- ColorScheme
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+
+
