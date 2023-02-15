@@ -2,6 +2,7 @@ require('plugins')
 -- Plugin setup
 require('plugin-lualine')
 require('plugin-telescope')
+require('plugin-toggleterm')
 
 -- Custom setting
 require('custom-000-ui')
