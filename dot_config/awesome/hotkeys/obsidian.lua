@@ -33,6 +33,11 @@ local obsidian_keys = {
             t = "open closed tab recently",
             ['Tab' ] = "previous tab"
         }
+    }, {
+        modifiers = { "Ctrl", "Alt" },
+        keys = {
+            r = "(original) force reload"
+        }
     }}
 }
 
