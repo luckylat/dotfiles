@@ -1,4 +1,0 @@
-" ---clipboard---
-
-set clipboard=unnamedplus
-
