@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
 
     -- Specific language
     -- - MarkDown
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     -- - TypeScript
     use 'leafgarland/typescript-vim'
