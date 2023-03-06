@@ -4,7 +4,7 @@ README.md
 Library
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
-.config/lazygit/config.yml
+.config/lazygit
 
 .chezmoiscripts/linux/**
 
@@ -14,4 +14,11 @@ Library
 .xinitrc
 .xprofile
 {{ end }}
+{{ if ne .chezmoi.os "windows" }}
+AppData
+{{ end }}
 
+{{ if eq .chezmoi.os "windows" }}
+.zshrc
+.tmux.conf
+{{ end }}
