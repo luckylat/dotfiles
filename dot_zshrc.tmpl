@@ -33,6 +33,7 @@ zplug load --verbose
 # util function
 # -- fzf function
 
+{{- if ne .cp.library "" }}
 ccp() {
     local cpfile
 
@@ -46,6 +47,7 @@ ccp() {
     fi
 
 }
+{{- end }}
 
 # -- other function
 fcp() {
