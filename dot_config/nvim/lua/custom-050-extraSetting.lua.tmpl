@@ -1,6 +1,6 @@
 -- ClipBoard
 {{ if eq .chezmoi.os "linux" }}
 vim.opt.clipboard = "unnamedplus"
-{{ else if eq .chezmoi.os "darwin" }}
+{{ else }}
 vim.opt.clipboard = "unnamed"
 {{ end }}
