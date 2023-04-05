@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
     -- Syntax
     use 'alker0/chezmoi.vim'
     use 'Fymyte/rasi.vim'
+    use 'prisma/vim-prisma'
 
     -- Git
     use 'airblade/vim-gitgutter'
