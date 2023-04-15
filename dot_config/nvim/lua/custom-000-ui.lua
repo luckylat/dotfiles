@@ -16,6 +16,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- ColorScheme
+vim.o.termguicolors = true
 vim.cmd 'colorscheme tokyonight'
 -- vim.cmd 'hi NonText ctermbg=NONE ctermfg=59 guibg=NONE guifg=NONE'
 -- vim.cmd 'hi SpecialKey ctermbg=NONE ctermfg=59 guibg=NONE-guifg=NONE'

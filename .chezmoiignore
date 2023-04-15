@@ -11,6 +11,7 @@ Library
 .config/rofi
 .config/awesome
 .config/alacritty
+.latexmkrc
 .xinitrc
 .xprofile
 {{ end }}

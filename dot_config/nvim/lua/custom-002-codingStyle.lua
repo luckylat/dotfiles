@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 vim.api.nvim_create_augroup('languageTab', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
     group = 'languageTab',
-    pattern = { 'cpp', 'javascript', 'typescript', 'typescriptreact', 'rasi' },
+    pattern = { 'cpp', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'rasi', 'dockerfile', 'json' },
     callback = function()
         vim.opt_local.sw = 2
         vim.opt_local.ts = 2

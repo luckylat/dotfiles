@@ -1,0 +1,18 @@
+#!/usr/bin/env/perl
+
+#ref:
+#https://qiita.com/Aruneko/items/6d073447bff91addd512
+$latex        = 'uplatex -shell-escape -synctex=1 -halt-on-error';
+$latex_silent = 'uplatex -shell-escape -synctex=1 -halt-on-error -interaction=batchmode';
+$bibtex       = 'pbibtex';
+$dvipdf       = 'dvipdfmx %O -o %D %S';
+$makeindex    = 'mendex %O -o %D %S';
+$max_repeat   = 5;
+$pdf_mode     = 3;
+
+
+
+$pvc_view_file_via_temporary = 0;
+
+
+$pdf_previewer = 'xdg-open';
