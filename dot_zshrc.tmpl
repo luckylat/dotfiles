@@ -34,6 +34,7 @@ zplug load --verbose
 # -- fzf function
 
 {{- if ne .cp.library "" }}
+# library copy command for competitive programming
 ccp() {
     local cpfile
 
@@ -47,6 +48,17 @@ ccp() {
     fi
 
 }
+{{- end }}
+
+{{- if ne .util.commandsFile "" }}
+
+ccmd() {
+    local commandFile
+
+    commandFile=$(cat {{ .util.commandsFile }} | fzf)
+    eval $commandFile
+}
+
 {{- end }}
 
 # -- other function
