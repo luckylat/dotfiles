@@ -1,9 +1,11 @@
 
+require("awful.hotkeys_popup.keys.vim")
 
 local keys = {
-    firefox = require('hotkeys.firefox'),
+    firefox  = require('hotkeys.firefox'),
     obsidian = require('hotkeys.obsidian'),
-    zathura = require('hotkeys.zathura'),
+    vim      = require('hotkeys.vim'),
+    zathura  = require('hotkeys.zathura'),
 }
 
 return keys

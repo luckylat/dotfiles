@@ -45,7 +45,6 @@ end
 -- }}}
 
 -- {{{ Hotkeys
-require("awful.hotkeys_popup.keys.vim")
 require("hotkeys")
 -- }}}
 
