@@ -16,6 +16,14 @@ local vim_keys = {
         modifiers = {},
         keys = {
             ["\\g"] = "execute lazygit",
+            ["\\o"] = "open file",
+        }
+    }, {
+        modifiers = {"Alt"},
+        keys = {
+            , = "go previous tab"
+            . = "go next tab"
+            ["1-9"] = "go tab x"
         }
     }}
 }
