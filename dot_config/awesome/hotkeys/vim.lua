@@ -21,8 +21,8 @@ local vim_keys = {
     }, {
         modifiers = {"Alt"},
         keys = {
-            , = "go previous tab"
-            . = "go next tab"
+            [","] = "go previous tab",
+            ["."] = "go next tab",
             ["1-9"] = "go tab x"
         }
     }}
