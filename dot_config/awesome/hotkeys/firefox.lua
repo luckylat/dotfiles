@@ -15,29 +15,22 @@ for group_name, group_data in pairs({
 end
 
 local firefox_keys = {
-    ["Firefox: tabs"] = {{
-        modifiers = { "Mod1" },
-        keys = {
-            ["1..9"] = "go to tab"
-        }
-    }, {
-        modifiers = { "Ctrl" },
-        keys = {
-            t = "new tab",
-            w = "close tab",
-            ['Tab'] = "next tab"
-        }
-    }, {
-        modifiers = { "Ctrl", "Shift" },
-        keys = {
-            t = "open closed tab recently",
-            ['Tab' ] = "previous tab"
-        }
-    }},
     ["Firefox: Addons"] = {{
         modifiers = { "Mod1", "Shift" },
         keys = {
             m = "(Stylebot) toggle Stylebot"
+        }
+    }},
+    ["Firefox: Tridactyl"] = {{
+        modifiers = {},
+        keys = {
+            o = "open site",
+            H = "go previous page",
+            L = "go next page",
+            d = "close current tab",
+            u = "restore previous closed tab",
+            ['gt'] = "go previous tab",
+            ['gT'] = "go next tab"
         }
     }}
 }
