@@ -66,6 +66,14 @@ fcp() {
     cat $1 | xsel -b
 }
 
+# Some util function
+function stylingEcho() {
+    if [[ "$1" == "modify" ]]; then
+        echo "\e[32mModified(zsh overlap)\e[0m: $2"
+    elif [[ "$1" == "ban" ]]; then
+        echo "\e[31mBanned(zsh overlap)\e[0m: $2"
+    fi
+}
 
 # ulimit
 ulimit -Hs 131072
@@ -83,9 +91,10 @@ setopt EXTENDED_HISTORY
 if type "go" > /dev/null 2>&1; then
     function go(){
         if [[ "$1" == "get" ]]; then
-            echo "Modified: please use 'go install' instead 'go get'"
+            stylingEcho "ban" "please use 'go install' instead 'go get'"
         elif [[ "$1" == "build" && -z "$2" ]]; then
-            echo "Modified: default build output directory is build/"
+            stylingEcho "modify" "default build output directory is build/"
+            command go build -o build/
         else
             command go "$@"
         fi
