@@ -83,7 +83,9 @@ setopt EXTENDED_HISTORY
 if type "go" > /dev/null 2>&1; then
     function go(){
         if [[ "$1" == "get" ]]; then
-            echo "please use 'go install' instead 'go get'"
+            echo "Modified: please use 'go install' instead 'go get'"
+        elif [[ "$1" == "build" && -z "$2" ]]; then
+            echo "Modified: default build output directory is build/"
         else
             command go "$@"
         fi
