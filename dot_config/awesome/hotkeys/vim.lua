@@ -23,7 +23,8 @@ local vim_keys = {
         keys = {
             [","] = "go previous tab",
             ["."] = "go next tab",
-            ["1-9"] = "go tab x"
+            ["1-9"] = "go tab x",
+            ["c"] = "close current tab",
         }
     }}
 }
