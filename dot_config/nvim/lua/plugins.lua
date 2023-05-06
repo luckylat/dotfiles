@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
         requires = 'nvim-web-devicons'
     }
 
+    use 'editorconfig/editorconfig-vim'
+
     -- LSP
     use 'prabirshrestha/vim-lsp'
     use 'mattn/vim-lsp-settings'
