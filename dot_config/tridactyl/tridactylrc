@@ -1,3 +1,6 @@
+seturl https://atcoder.jp/* noiframe true
+seturl https://codeforces.com/* noiframe true
+
 set smoothscroll true
 
 bind / fillcmdline find
