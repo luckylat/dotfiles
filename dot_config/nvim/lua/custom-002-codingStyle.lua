@@ -9,6 +9,13 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
     callback = function() vim.opt_local.filetype = 'jsonc' end
 })
 
+-- TODO: make syntax for mdx
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+    group = 'specialFileType',
+    pattern = { '*.mdx' },
+    callback = function() vim.opt_local.filetype = 'markdown' end
+})
+
 vim.api.nvim_create_augroup('languageTab', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
     group = 'languageTab',
