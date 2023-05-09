@@ -1,10 +1,10 @@
 [submodule "dot_config/alacritty/alacritty-theme"]
-	path = dot_config/alacritty/alacritty-theme
-	url = https://github.com/alacritty/alacritty-theme
+    path = dot_config/alacritty/alacritty-theme
+    url = https://github.com/alacritty/alacritty-theme
 [submodule "dot_config/awesome/widgets/awesome-buttons"]
-	path = dot_config/awesome/widgets/awesome-buttons
-	url = https://github.com/luckylat/awesome-buttons
+    path = dot_config/awesome/widgets/awesome-buttons
+    url = https://github.com/luckylat/awesome-buttons
     branch = master
 [submodule "dot_config/awesome/widgets/awesome-wm-widgets-e"]
-	path = dot_config/awesome/widgets/awesome-wm-widgets-e
-	url = https://github.com/luckylat/awesome-wm-widgets-e
+    path = dot_config/awesome/widgets/awesome-wm-widgets-e
+    url = https://github.com/luckylat/awesome-wm-widgets-e
