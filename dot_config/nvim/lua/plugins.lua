@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
     use 'prabirshrestha/vim-lsp'
     use 'mattn/vim-lsp-settings'
 
+    -- Templater
+    use 'mattn/vim-sonictemplate'
+
     -- Style Checker
     use 'lilydjwg/colorizer'
 
