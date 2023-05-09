@@ -1,3 +1,6 @@
 require('lualine').setup {
-    options = { theme = 'dracula' }
+    options = { theme = 'codedark' },
+    sections = {
+        lualine_c = {{'filename', path=1}}
+    }
 }

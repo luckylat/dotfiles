@@ -1,0 +1,12 @@
+seturl https://atcoder.jp/* noiframe true
+seturl https://codeforces.com/* noiframe true
+
+set smoothscroll true
+
+bind YY composite js document.URL | yank
+
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext --reverse 1
+bind ,<Space> nohlsearch

@@ -4,6 +4,8 @@ require('plugin-lualine')
 require('plugin-telescope')
 require('plugin-toggleterm')
 require('plugin-barbar')
+require('plugin-nvim-cmp')
+require('plugin-lspconfig')
 
 -- Custom setting
 require('custom-000-ui')

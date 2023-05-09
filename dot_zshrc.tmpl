@@ -34,6 +34,7 @@ zplug load --verbose
 # -- fzf function
 
 {{- if ne .cp.library "" }}
+# library copy command for competitive programming
 ccp() {
     local cpfile
 
@@ -49,11 +50,30 @@ ccp() {
 }
 {{- end }}
 
+{{- if ne .util.commandsFile "" }}
+
+ccmd() {
+    local commandFile
+
+    commandFile=$(cat {{ .util.commandsFile }} | fzf)
+    eval $commandFile
+}
+
+{{- end }}
+
 # -- other function
 fcp() {
     cat $1 | xsel -b
 }
 
+# Some util function
+function stylingEcho() {
+    if [[ "$1" == "modify" ]]; then
+        echo "\e[32mModified(zsh overlap)\e[0m: $2"
+    elif [[ "$1" == "ban" ]]; then
+        echo "\e[31mBanned(zsh overlap)\e[0m: $2"
+    fi
+}
 
 # ulimit
 ulimit -Hs 131072
@@ -80,7 +100,42 @@ else
     echo "Not Found: zoxide is not installed."
 fi
 
-# alias
+# alias and overlapping
+if type "go" > /dev/null 2>&1; then
+    function go(){
+        if [[ "$1" == "get" ]]; then
+            stylingEcho "ban" "please use 'go install' instead 'go get'"
+        elif [[ "$1" == "build" && -z "$2" ]]; then
+            stylingEcho "modify" "default build output directory is build/"
+            command go build -o build/
+        else
+            command go "$@"
+        fi
+    }
+fi
+
+if type "git" > /dev/null 2>&1; then
+    function git(){
+        if [[ "$1" == "checkout" ]]; then
+            stylingEcho "ban" "please use 'git switch' instead 'git checkout'"
+        else
+            command git "$@"
+        fi
+
+    }
+    alias ga="git add"
+    alias gc="git cz"
+    alias gp="git push"
+fi
+
+if type "lazygit" > /dev/null 2>&1; then
+    alias lg="lazygit"
+fi
+
+if type "github-transporter" > /dev/null 2>&1; then
+    alias gt="github-transporter"
+fi
+
 if type "tree" > /dev/null 2>&1; then
     alias tree="tree -I .git -I node_modules -L 3"
 fi
@@ -93,15 +148,8 @@ if type "delta" > /dev/null 2>&1; then
     alias diff="delta"
 fi
 
-if type "lazygit" > /dev/null 2>&1; then
-    alias lg="lazygit"
-fi
 
 alias @="notify-send -i /usr/share/icons/Arc/status/128/dialog-information.png 'Process Finished' 'Process Finished'"
-
-alias ga="git add"
-alias gc="git cz"
-alias gp="git push"
 
 alias vim="noglob nvim"
 alias vp='nvim -c ":e #<1"'
@@ -110,8 +158,8 @@ alias vag="vagrant"
 
 alias ce="chezmoi edit"
 
-# VBox(for vagrant)
 
+# VBox(for vagrant)
 if [ $USER = 'vagrant' ]; then
     VBoxClient --clipboard
 fi
