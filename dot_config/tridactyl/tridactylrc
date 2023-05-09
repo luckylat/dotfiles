@@ -3,6 +3,8 @@ seturl https://codeforces.com/* noiframe true
 
 set smoothscroll true
 
+bind YY composite js document.URL | yank
+
 bind / fillcmdline find
 bind ? fillcmdline find -?
 bind n findnext 1
