@@ -32,8 +32,19 @@ return require('packer').startup(function(use)
     use 'editorconfig/editorconfig-vim'
 
     -- LSP
-    use 'prabirshrestha/vim-lsp'
-    use 'mattn/vim-lsp-settings'
+    use 'neovim/nvim-lspconfig'
+
+    -- Auto Compeltion
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+
+    -- vsnip
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+
 
     -- Templater
     use 'mattn/vim-sonictemplate'
