@@ -148,6 +148,10 @@ if type "delta" > /dev/null 2>&1; then
     alias diff="delta"
 fi
 
+if type "volta" > /dev/null 2>&1; then
+    export VOLTA_HOME="$HOME/.volta"
+    export PATH="$VOLTA_HOME/bin:$PATH"
+fi
 
 alias @="notify-send -i /usr/share/icons/Arc/status/128/dialog-information.png 'Process Finished' 'Process Finished'"
 
