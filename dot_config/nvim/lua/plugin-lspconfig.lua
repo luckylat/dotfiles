@@ -16,6 +16,7 @@ lspconfig['rust_analyzer'].setup {
     },
 }
 
+-- C++
 lspconfig['ccls'].setup {
     capabilities = capabilities,
     init_options = {
@@ -24,6 +25,8 @@ lspconfig['ccls'].setup {
         };
     }
 }
+
+lspconfig['gopls'].setup {}
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
