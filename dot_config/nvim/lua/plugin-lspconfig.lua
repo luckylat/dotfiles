@@ -28,6 +28,8 @@ lspconfig['ccls'].setup {
 
 lspconfig['gopls'].setup {}
 
+lspconfig['ruby_ls'].setup {}
+
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
