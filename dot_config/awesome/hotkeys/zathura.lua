@@ -17,7 +17,10 @@ local zathura_keys = {
         keys = {
             j = "down",
             k = "up",
-            q = "quit"
+            q = "quit",
+           ['[n]='] = "zoom to n%",
+           ['zI'] = "ZoomIn",
+           ['zO'] = "ZoomOut",
         }
     }, {
         modifiers = { "Ctrl" },
