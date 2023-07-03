@@ -59,6 +59,9 @@ return require('packer').startup(function(use)
     -- - TypeScript
     use 'leafgarland/typescript-vim'
 
+    -- SATySFi
+    use 'qnighy/satysfi.vim'
+
     -- ColorScheme
     use 'folke/tokyonight.nvim'
 end)
