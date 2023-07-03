@@ -26,8 +26,10 @@ lspconfig['ccls'].setup {
     }
 }
 
+-- Golang
 lspconfig['gopls'].setup {}
 
+-- Ruby
 lspconfig['ruby_ls'].setup {}
 
 local map = vim.api.nvim_set_keymap
