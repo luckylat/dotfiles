@@ -97,8 +97,13 @@ fi
 
 ## Language C++
 if type "g++" > /dev/null 2>&1; then
-    alias g++="g++ --warn-all"
+    alias g++++="g++ -fsanitize=undefined -g -fno-omit-frame-pointer -Wall -Wextra"
 fi
+
+### OpenGL
+function ccgl() {
+    gcc "$@" -lglut -lGLU -lGL -lm -lstdc++;
+}
 
 ## Language Python
 source "$HOME/.rye/env"
