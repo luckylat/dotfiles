@@ -1,6 +1,9 @@
 [directory]
 truncation_symbol = ".../"
 
+[ruby]
+detect_variables = []
+
 [[battery.display]]
 threshold = 100
 style = "bold yellow"
