@@ -1,7 +1,6 @@
 # load start
 echo "loading zshrc..."
 
-
 # -- zsh plugins
 # zsh-plugins for mac
 if type brew &> /dev/null; then
@@ -27,12 +26,10 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
-
 # --
 
 # util function
 # -- fzf function
-
 {{- if ne .cp.library "" }}
 # library copy command for competitive programming
 ccp() {
@@ -51,14 +48,12 @@ ccp() {
 {{- end }}
 
 {{- if ne .util.commandsFile "" }}
-
 ccmd() {
     local commandFile
 
     commandFile=$(cat {{ .util.commandsFile }} | fzf)
     eval $commandFile
 }
-
 {{- end }}
 
 # -- other function
@@ -87,25 +82,11 @@ export SAVEHIST=10000
 setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
 
-# starship
-if type "starship" > /dev/null 2>&1; then
-    eval "$(starship init zsh)"
-else
-    echo "Not Found: Starship is not installed."
-fi
-
-if type "zoxide" > /dev/null 2>&1; then
-    eval "$(zoxide init zsh)"
-else
-    echo "Not Found: zoxide is not installed."
-fi
-
 # alias and overlapping
+## Language: Go
 if type "go" > /dev/null 2>&1; then
     function go(){
-        if [[ "$1" == "get" ]]; then
-            stylingEcho "ban" "please use 'go install' instead 'go get'"
-        elif [[ "$1" == "build" && -z "$2" ]]; then
+        if [[ "$1" == "build" && -z "$2" ]]; then
             stylingEcho "modify" "default build output directory is build/"
             command go build -o build/
         else
@@ -114,6 +95,20 @@ if type "go" > /dev/null 2>&1; then
     }
 fi
 
+## Language C++
+if type "g++" > /dev/null 2>&1; then
+    alias g++++="g++ -fsanitize=undefined -g -fno-omit-frame-pointer -Wall -Wextra"
+fi
+
+### OpenGL
+function ccgl() {
+    gcc "$@" -lglut -lGLU -lGL -lm -lstdc++;
+}
+
+## Language Python
+source "$HOME/.rye/env"
+
+# git
 if type "git" > /dev/null 2>&1; then
     function git(){
         if [[ "$1" == "checkout" ]]; then
@@ -136,6 +131,20 @@ if type "github-transporter" > /dev/null 2>&1; then
     alias gt="github-transporter"
 fi
 
+# starship
+if type "starship" > /dev/null 2>&1; then
+    eval "$(starship init zsh)"
+else
+    echo "Not Found: Starship is not installed."
+fi
+
+# zoxide
+if type "zoxide" > /dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+else
+    echo "Not Found: zoxide is not installed."
+fi
+
 if type "tree" > /dev/null 2>&1; then
     alias tree="tree -I .git -I node_modules -L 3"
 fi
@@ -149,12 +158,23 @@ if type "delta" > /dev/null 2>&1; then
 fi
 
 
+{{- if ne .cp.library "" }}
+export CP_Template={{.cp.library}}/cpp/template/basic.cpp
+
+if type "cp-template" > /dev/null 2>&1; then
+    alias cpt="cp-template"
+fi
+{{- end }}
+
+if type "volta" > /dev/null 2>&1; then
+    export VOLTA_HOME="$HOME/.volta"
+    export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
 alias @="notify-send -i /usr/share/icons/Arc/status/128/dialog-information.png 'Process Finished' 'Process Finished'"
 
 alias vim="noglob nvim"
 alias vp='nvim -c ":e #<1"'
-
-alias vag="vagrant"
 
 alias ce="chezmoi edit"
 
