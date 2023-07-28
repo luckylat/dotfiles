@@ -59,8 +59,14 @@ return require('packer').startup(function(use)
     -- - TypeScript
     use 'leafgarland/typescript-vim'
 
-    -- SATySFi
+    -- - SATySFi
     use 'qnighy/satysfi.vim'
+
+    -- - tridactyl
+    use 'tridactyl/vim-tridactyl'
+
+    -- - GLSL
+    use 'tikhomirov/vim-glsl'
 
     -- ColorScheme
     use 'folke/tokyonight.nvim'
