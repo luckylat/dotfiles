@@ -10,6 +10,7 @@ local firefox_rule = { class = { "firefox" } }
 for group_name, group_data in pairs({
     ["Firefox: tabs"] = { color = "#F25C54", rule_any = firefox_rule },
     ["Firefox: Addons"] = { color = "#F27059", rule_any = firefox_rule },
+    ["Firefox: Tridactyl"] = { color = "#564EC3", rule_any = firefox_rule },
 }) do
     hotkeys_popup.add_group_rules(group_name, group_data)
 end
