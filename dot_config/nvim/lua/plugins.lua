@@ -52,12 +52,17 @@ return require('packer').startup(function(use)
     -- Style Checker
     use 'lilydjwg/colorizer'
 
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
+
     -- Specific language
     -- - MarkDown
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
-    -- - TypeScript
-    use 'leafgarland/typescript-vim'
 
     -- - SATySFi
     use 'qnighy/satysfi.vim'
