@@ -1,4 +1,4 @@
 -- For CP
 {{- if ne .cp.library "" }}
-vim.api.nvim_set_keymap('n', '<F2>', ':r! cat {{ .cp.library }}/cpp/template/basic.cpp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F2>', ':r! oj-bundle {{ .cp.library }}/cpp/template/basic.cpp 2>/dev/null<CR>', { noremap = true, silent = true })
 {{- end }}
