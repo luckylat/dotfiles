@@ -60,6 +60,9 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- Utility Plugin
+    use 'dstein64/vim-startuptime'
+
     -- Specific language
     -- - MarkDown
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
