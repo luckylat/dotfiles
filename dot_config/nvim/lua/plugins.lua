@@ -1,81 +1,111 @@
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    -- Some Requirement
-    use { 'nvim-tree/nvim-web-devicons' }
 
-    -- Syntax
-    use 'alker0/chezmoi.vim'
-    use 'Fymyte/rasi.vim'
-    use 'prisma/vim-prisma'
+plugins = {
+    -- -- Syntax
+    'alker0/chezmoi.vim',
+    'Fymyte/rasi.vim',
+    'prisma/vim-prisma',
 
-    -- Git
-    use 'airblade/vim-gitgutter'
+    -- -- Git
+    'airblade/vim-gitgutter',
 
-    -- Tree explorer
-    use { 'nvim-lua/plenary.nvim' }
-    use { 'nvim-telescope/telescope.nvim' }
-    use { 'nvim-telescope/telescope-file-browser.nvim' }
-    -- Terminal
-    use 'akinsho/toggleterm.nvim'
+    -- -- Tree explorer
+    {
+        'nvim-telescope/telescope-file-browser.nvim',
+        dependencies = {
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/plenary.nvim',
+        },
+    },
 
-    -- Status / Tab line
-    use {
-        'romgrk/barbar.nvim', 
-        requires = 'nvim-web-devicons'
-    }
-    use {
+    -- -- Terminal
+
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true,
+    },
+
+    -- -- Status / Tab line 
+    {
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim',
+            'nvim-tree/nvim-web-devicons',
+        },
+    },
+    {
         'nvim-lualine/lualine.nvim',
-        requires = 'nvim-web-devicons'
-    }
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    },
 
-    use 'editorconfig/editorconfig-vim'
+    -- -- Linter
+    'editorconfig/editorconfig-vim',
 
-    -- LSP
-    use 'neovim/nvim-lspconfig'
+    -- -- LSP
+    'neovim/nvim-lspconfig',
 
-    -- Auto Compeltion
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
+    -- -- Auto Completion
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
 
-    -- vsnip
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
+    -- -- vsnip
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip',
 
+    -- -- Templater
+    'mattn/vim-sonictemplate',
 
-    -- Templater
-    use 'mattn/vim-sonictemplate'
+    -- -- Style Checker
+    'lilydjwg/colorizer',
 
-    -- Style Checker
-    use 'lilydjwg/colorizer'
-
-    use {
+    {
         'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
+        build = ":TSUpdate",
+    },
 
-    -- Utility Plugin
-    use 'dstein64/vim-startuptime'
+    -- -- Utility
+    'dstein64/vim-startuptime',
 
     -- Specific language
-    -- - MarkDown
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-    -- - SATySFi
-    use 'qnighy/satysfi.vim'
+    -- -- MarkDown
+    {
+        'iamcco/markdown-preview.nvim',
+        config = function()
+            vim.fn["mkdp#util#install"]()
+        end,
+    },
 
-    -- - tridactyl
-    use 'tridactyl/vim-tridactyl'
+    -- -- SATySFi
+    'qnighy/satysfi.vim',
 
-    -- - GLSL
-    use 'tikhomirov/vim-glsl'
+    -- -- tridactyl
+    'tridactyl/vim-tridactyl',
 
-    -- ColorScheme
-    use 'folke/tokyonight.nvim'
-end)
+    -- -- - GLSL
+    'tikhomirov/vim-glsl',
+
+    -- -- ColorScheme
+    'folke/tokyonight.nvim',
+}
+
+require('lazy').setup(plugins)
+
