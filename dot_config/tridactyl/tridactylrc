@@ -10,6 +10,7 @@ autocmd DocStart ^https://drive.google.com mode ignore
 autocmd DocStart ^https://www.youtube.com/* mode ignore
 autocmd DocStart ^https://monkeytype.com/* mode ignore
 autocmd DocStart ^https://github.com/* mode ignore
+autocmd DocStart ^https://regexcrossword.com/* mode ignore
 
 " SmoothScroll
 set smoothscroll true
