@@ -19,3 +19,9 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = { 'tex', 'lua' },
     callback = function() vim.opt_local.foldmethod = 'indent' end
 })
+vim.api.nvim_create_autocmd('FileType', {
+    group = 'languageFold',
+    pattern = { 'cpp' },
+    callback = function() vim.opt_local.foldmethod = 'syntax' end
+})
+
