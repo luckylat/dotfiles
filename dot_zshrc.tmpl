@@ -35,7 +35,7 @@ zplug load --verbose
 ccp() {
     local cpfile
 
-    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" \) -not -path '{{ .cp.library }}/test/*' -type f -print 2> /dev/null | fzf)
+    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" -o -name "*.hpp" \) -not -path '*/z_test/*' -not -path '*/.ccls-cache/*' -type f -print 2> /dev/null | fzf)
     if type "oj-bundle" > /dev/null 2>&1; then
         oj-bundle $cpfile | xsel -b
         echo "Copied $cpfile (by oj-bundle)"
@@ -149,8 +149,8 @@ if type "tree" > /dev/null 2>&1; then
     alias tree="tree -I .git -I node_modules -L 3"
 fi
 
-if type "exa" > /dev/null 2>&1; then
-    alias ls="exa --git"
+if type "eza" > /dev/null 2>&1; then
+    alias ls="eza --git"
 fi
 
 if type "delta" > /dev/null 2>&1; then

@@ -1,16 +1,25 @@
+" Prevent whiteout
 seturl https://atcoder.jp/* noiframe true
 seturl https://codeforces.com/* noiframe true
 
+" Ignore pages
 autocmd DocStart ^https://hackmd.io mode ignore
 autocmd DocStart ^https://notreversi2.netlify.app/ mode ignore
 autocmd DocStart ^https://docs.google.com/ mode ignore
 autocmd DocStart ^https://drive.google.com mode ignore
 autocmd DocStart ^https://www.youtube.com/* mode ignore
+autocmd DocStart ^https://monkeytype.com/* mode ignore
+autocmd DocStart ^https://github.com/* mode ignore
+autocmd DocStart ^https://regexcrossword.com/* mode ignore
 
+" SmoothScroll
 set smoothscroll true
 
+" Copy Link
 bind YY composite js document.URL | yank
 
+
+" Find
 bind / fillcmdline find
 bind ? fillcmdline find -?
 bind n findnext 1

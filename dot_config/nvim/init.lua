@@ -1,3 +1,5 @@
+if vim.loader then vim.loader.enable() end
+
 require('plugins')
 -- Plugin setup
 require('plugin-lualine')
