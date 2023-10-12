@@ -17,6 +17,7 @@ compinit
 zplug "zsh-users/zsh-autosuggestions"
 bindkey '^[[13;2u' autosuggest-accept
 
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
    printf "Install?[y/N]: "
