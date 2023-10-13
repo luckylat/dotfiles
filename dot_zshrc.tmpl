@@ -57,6 +57,27 @@ ccmd() {
 }
 {{- end }}
 
+# -- competitive programing function
+{{- if ne .cp.workspace "" }}
+abc() {
+    local folderPath={{ .cp.workspace }}/AtCoder/ABC_Folder/ABC$1
+    mkdir -p $folderPath
+    cd $folderPath
+}
+
+arc() {
+    local folderPath={{ .cp.workspace }}/AtCoder/ARC_Folder/ABC$1
+    mkdir -p $folderPath
+    cd $folderPath
+}
+
+agc() {
+    local folderPath={{ .cp.workspace }}/AtCoder/AGC_Folder/ABC$1
+    mkdir -p $folderPath
+    cd $folderPath
+}
+{{- end }}
+
 # -- other function
 fcp() {
     cat $1 | xsel -b
