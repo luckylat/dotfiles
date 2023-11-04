@@ -179,6 +179,14 @@ if type "delta" > /dev/null 2>&1; then
     alias diff="delta"
 fi
 
+if type "zathura" > /dev/null 2>&1; then
+    alias ztr="zathura"
+fi
+
+if type "satysfi" > /dev/null 2>&1; then
+    alias saty="satysfi"
+fi
+
 
 {{- if ne .cp.library "" }}
 export CP_Template={{.cp.library}}/cpp/template/basic.cpp
