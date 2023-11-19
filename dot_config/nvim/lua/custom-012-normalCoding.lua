@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 vim.api.nvim_create_autocmd('FileType', {
     group = 'languageFold',
-    pattern = { 'cpp' },
+    pattern = { 'c', 'cpp', 'satysfi' },
     callback = function() vim.opt_local.foldmethod = 'syntax' end
 })
 
