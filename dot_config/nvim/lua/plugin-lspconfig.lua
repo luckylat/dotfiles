@@ -2,6 +2,8 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require('lspconfig')
+local configs = require('lspconfig.configs')
+local util = require('lspconfig.util')
 
 -- TypeScript
 lspconfig['tsserver'].setup {
@@ -31,6 +33,32 @@ lspconfig['gopls'].setup {}
 
 -- Ruby
 lspconfig['ruby_ls'].setup {}
+
+-- SATySFi
+
+if not configs['satysfi-ls'] then
+    configs['satysfi-ls'] = {
+        default_config = {
+            cmd = { 'satysfi-language-server' },
+            filetypes = { 'satysfi' },
+            root_dir = util.root_pattern('.git'),
+            single_file_support = true,
+        },
+        docs = {
+            description = [[
+                https://github.com/monaqa/satysfi-language-server
+                Language server for SATySFi.
+                ]],
+            default_config = {
+                root_dir = [[root_pattern(".git")]],
+            },
+        },
+    }
+end
+lspconfig['satysfi-ls'].setup {
+    autostart = true
+}
+
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
