@@ -123,7 +123,7 @@ fi
 
 ## Language C++
 if type "g++" > /dev/null 2>&1; then
-    alias g++++="g++ -fsanitize=undefined -g -fno-omit-frame-pointer -Wall -Wextra"
+    alias g++++="g++ -fsanitize=undefined,address -g -fno-omit-frame-pointer -Wall -Wextra -no-pie"
 fi
 
 ### OpenGL
