@@ -1,0 +1,26 @@
+import = ["/home/sakflat/.config/alacritty/alacritty-theme/themes/tokyo-night.toml"]
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 6.0
+
+[[keyboard.bindings]]
+chars = "\u001B[13;2u"
+key = "Return"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;5u"
+key = "Return"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Insert"
+mods = "Shift"
+
+[window]
+opacity = 0.8
+title = "Alacritty"
