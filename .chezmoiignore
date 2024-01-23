@@ -10,9 +10,11 @@ Library
 .chezmoiscripts/linux/**
 
 # clovereal
-.config/rofi
-.config/awesome
 .config/alacritty
+.config/awesome
+.config/rofi
+.config/tridactyl
+.config/zathura
 .xinitrc
 .xprofile
 {{ end }}
