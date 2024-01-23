@@ -1,26 +1,27 @@
 README.md
+.latexmkrc # currently I don't use LaTeX
 
-{{ if ne .chezmoi.os "darwin" }}
+{{ if ne .chezmoi.os "darwin" }} # ignore if this is not mac (i.e. ignore if this is windows or linux)
 Library
 {{ end }}
-{{ if ne .chezmoi.os "linux" }}
+{{ if ne .chezmoi.os "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
 .config/lazygit
 
 .chezmoiscripts/linux/**
 
+# clovereal
 .config/rofi
 .config/awesome
 .config/alacritty
-.latexmkrc
 .xinitrc
 .xprofile
 {{ end }}
-{{ if ne .chezmoi.os "windows" }}
+{{ if ne .chezmoi.os "windows" }} # ignore if this is not windows (i.e. igrnore if this is mac or linux)
 AppData
 Documents
 {{ end }}
 
-{{ if eq .chezmoi.os "windows" }}
+{{ if eq .chezmoi.os "windows" }} # ignore if this is windows
 .zshrc
 .tmux.conf
 {{ end }}

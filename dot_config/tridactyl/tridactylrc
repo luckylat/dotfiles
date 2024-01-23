@@ -8,16 +8,16 @@ autocmd DocStart ^https://notreversi2.netlify.app/ mode ignore
 autocmd DocStart ^https://docs.google.com/ mode ignore
 autocmd DocStart ^https://drive.google.com mode ignore
 autocmd DocStart ^https://www.youtube.com/* mode ignore
-autocmd DocStart ^https://monkeytype.com/* mode ignore
 autocmd DocStart ^https://github.com/* mode ignore
-autocmd DocStart ^https://regexcrossword.com/* mode ignore
+autocmd DocStart ^https://qiita.com/* mode ignore
+autocmd DocStart ^https://colab.research.google.com/* mode ignore
 
 " SmoothScroll
 set smoothscroll true
 
 " Copy Link
 bind YY composite js document.URL | yank
-
+bind YA composite js document.URL.match(/[^\/]*$/)[0] | yank
 
 " Find
 bind / fillcmdline find

@@ -23,10 +23,10 @@ local zathura_keys = {
            ['zO'] = "ZoomOut",
         }
     }, {
-        modifiers = { "Ctrl" },
+        modifiers = { "Shift" },
         keys = {
-            f = "1-page down",
-            b = "1-page up"
+            j = "1-page down",
+            k = "1-page up"
         }
     }}
 }

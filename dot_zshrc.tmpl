@@ -17,6 +17,7 @@ compinit
 zplug "zsh-users/zsh-autosuggestions"
 bindkey '^[[13;2u' autosuggest-accept
 
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
    printf "Install?[y/N]: "
@@ -35,7 +36,7 @@ zplug load --verbose
 ccp() {
     local cpfile
 
-    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" -o -name "*.hpp" \) -not -path '*/z_test/*' -not -path '*/.ccls-cache/*' -type f -print 2> /dev/null | fzf)
+    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" -o -name "*.hpp" \) -not -path '*/z_test/*' -not -path '*/.ccls-cache/*' -not -path '*/.competitive-verifier/*' -type f -print 2> /dev/null | fzf)
     if type "oj-bundle" > /dev/null 2>&1; then
         oj-bundle $cpfile | xsel -b
         echo "Copied $cpfile (by oj-bundle)"
@@ -53,6 +54,27 @@ ccmd() {
 
     commandFile=$(cat {{ .util.commandsFile }} | fzf)
     eval $commandFile
+}
+{{- end }}
+
+# -- competitive programing function
+{{- if ne .cp.workspace "" }}
+abc() {
+    local folderPath={{ .cp.workspace }}/AtCoder/ABC_Folder/ABC$1
+    mkdir -p $folderPath
+    cd $folderPath
+}
+
+arc() {
+    local folderPath={{ .cp.workspace }}/AtCoder/ARC_Folder/ABC$1
+    mkdir -p $folderPath
+    cd $folderPath
+}
+
+agc() {
+    local folderPath={{ .cp.workspace }}/AtCoder/AGC_Folder/ABC$1
+    mkdir -p $folderPath
+    cd $folderPath
 }
 {{- end }}
 
@@ -76,11 +98,15 @@ ulimit -s 131072
 
 
 # command history
-export HISTFILE=${HOME}/.zsh_history
+export HISTFILE=${HOME}/.history/zsh
 export HISTSIZE=1000
 export SAVEHIST=10000
 setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
+
+# set some application history file 
+export REDISCLI_HISTFILE=${HOME}/.history/rediscli
+
 
 # alias and overlapping
 ## Language: Go
@@ -97,7 +123,7 @@ fi
 
 ## Language C++
 if type "g++" > /dev/null 2>&1; then
-    alias g++++="g++ -fsanitize=undefined -g -fno-omit-frame-pointer -Wall -Wextra"
+    alias g++++="g++ -fsanitize=undefined,address -g -fno-omit-frame-pointer -Wall -Wextra -no-pie"
 fi
 
 ### OpenGL
@@ -155,6 +181,18 @@ fi
 
 if type "delta" > /dev/null 2>&1; then
     alias diff="delta"
+fi
+
+if type "zathura" > /dev/null 2>&1; then
+    alias ztr="zathura"
+fi
+
+if type "zaread" > /dev/null 2>&1; then
+    alias za="zaread"
+fi
+
+if type "satysfi" > /dev/null 2>&1; then
+    alias saty="satysfi"
 fi
 
 
