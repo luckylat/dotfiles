@@ -4,7 +4,9 @@ import = ["/home/sakflat/.config/alacritty/alacritty-theme/themes/tokyo-night.to
 TERM = "alacritty"
 
 [font]
-size = 6.0
+normal = { family = "CommitMonoNerdFont"}
+size = 6
+offset = {x = 0, y = 2}
 
 [[keyboard.bindings]]
 chars = "\u001B[13;2u"
@@ -23,4 +25,3 @@ mods = "Shift"
 
 [window]
 opacity = 0.8
-title = "Alacritty"
