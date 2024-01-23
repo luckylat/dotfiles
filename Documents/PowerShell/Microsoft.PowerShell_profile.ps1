@@ -5,7 +5,7 @@ Invoke-Expression (& {
     (zoxide init --hook $hook powershell | Out-String)
 })
 
-$Env:SHELL = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+$Env:SHELL = 'C:\Program Files\PowerShell\7\pwsh.exe'
 
 set-psreadlinekeyhandler -Key Tab -Function MenuComplete
 
