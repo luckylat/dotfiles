@@ -11,7 +11,8 @@ autocmd DocStart ^https://www.youtube.com/* mode ignore
 autocmd DocStart ^https://github.com/* mode ignore
 autocmd DocStart ^https://qiita.com/* mode ignore
 autocmd DocStart ^https://colab.research.google.com/* mode ignore
-
+autocmd DocStart ^https://codeforces.com/* mode ignore
+autocmd DocStart ^http://locahost:8888/* mode ignore
 " SmoothScroll
 set smoothscroll true
 
