@@ -105,6 +105,9 @@ plugins = {
     -- -- - GLSL
     'tikhomirov/vim-glsl',
 
+    -- -- - CSV
+    'chrisbra/csv.vim',
+
     -- -- ColorScheme
     'folke/tokyonight.nvim',
 }
