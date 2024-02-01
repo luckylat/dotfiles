@@ -6,9 +6,9 @@ vim.api.nvim_create_autocmd('FileType', {
         {{- if ne .cp.library "" }}
         -- For CP
         vim.keymap.set('n', '<F2>', ':r! oj-bundle {{ .cp.library }}/cpp/template/basic.cpp 2>/dev/null<CR>', { noremap = true, silent = true })
-        vim.keymap.set('n', '<F3>', 'mz:%g/^#line.*$/d<CR>`z:noh', { noremap = true, silent = true })
+        vim.keymap.set('n', '<F3>', 'mz:%g/^#line.*$/d<CR>`z:noh<CR>', { noremap = true, silent = true })
         {{- end }}
     end
 })
 
-vim.keymap.set('n', '<leader>h', ':noh', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>h', ':noh<CR>', { noremap = true, silent = true })
