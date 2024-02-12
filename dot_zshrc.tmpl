@@ -36,7 +36,7 @@ zplug load --verbose
 ccp() {
     local cpfile
 
-    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" -o -name "*.hpp" \) -not -path '*/z_test/*' -not -path '*/.ccls-cache/*' -not -path '*/.competitive-verifier/*' -type f -print 2> /dev/null | fzf)
+    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" -o -name "*.hpp" \) -not -path '*/z_test/*' -not -path '*/ac-library/*' -not -path '*/.ccls-cache/*' -not -path '*/.competitive-verifier/*' -type f -print 2> /dev/null | fzf)
     if type "oj-bundle" > /dev/null 2>&1; then
         oj-bundle $cpfile | xsel -b
         echo "Copied $cpfile (by oj-bundle)"
