@@ -106,7 +106,10 @@ plugins = {
     'tikhomirov/vim-glsl',
 
     -- -- - CSV
-    'chrisbra/csv.vim',
+    {
+        'chrisbra/csv.vim',
+        ft = { "csv" },
+    },
 
     -- -- ColorScheme
     'folke/tokyonight.nvim',
