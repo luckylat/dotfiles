@@ -113,7 +113,7 @@ export REDISCLI_HISTFILE=${HOME}/.history/rediscli
 if type "go" > /dev/null 2>&1; then
     function go(){
         if [[ "$1" == "build" && -z "$2" ]]; then
-            stylingEcho "modify" "default build output directory is build/"
+            stylingEcho "modify" "(go) default build output directory is build/"
             command go build -o build/
         else
             command go "$@"
