@@ -200,7 +200,17 @@ fi
 export CP_Template={{.cp.library}}/cpp/template/basic.cpp
 
 if type "cp-template" > /dev/null 2>&1; then
-    alias cpt="cp-template"
+    function cpt (){ 
+        if [ $# -eq 2 ]; then
+            stylingEcho "modify" "(cp-template) Arg:2"
+            cp-template --folder $1 --number $2
+        elif [ $# -eq 3 ]; then
+            stylingEcho "modify" "(cp-template) Arg:3"
+            cp-template --folder $1 --number $2 --style $3
+        else
+            stylingEcho "modify" "(cp-template) option argument is between 2-3"
+        fi
+    }
 fi
 {{- end }}
 
