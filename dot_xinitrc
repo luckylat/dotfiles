@@ -7,6 +7,6 @@
 # for thinkpad
 # xinput set-button-map 'ETPS/2 Elantech TrackPoint' 1 2 3 4 5 6 7
 # xinput disable 'ETPS/2 Elantech Touchpad'
-
+xinput disable 'ETPS/2 Elantech TrackPoint'
 
 exec awesome
