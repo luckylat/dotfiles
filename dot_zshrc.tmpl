@@ -36,7 +36,7 @@ zplug load --verbose
 ccp() {
     local cpfile
 
-    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" -o -name "*.hpp" \) -not -path '*/z_test/*' -not -path '*/.ccls-cache/*' -not -path '*/.competitive-verifier/*' -type f -print 2> /dev/null | fzf)
+    cpfile=$(find {{ .cp.library }} \( -name "*.cpp" -o -name "*.go" -o -name "*.hs" -o -name "*.bc" -o -name "*.hpp" \) -not -path '*/z_test/*' -not -path '*/ac-library/*' -not -path '*/.ccls-cache/*' -not -path '*/.competitive-verifier/*' -type f -print 2> /dev/null | fzf)
     if type "oj-bundle" > /dev/null 2>&1; then
         oj-bundle $cpfile | xsel -b
         echo "Copied $cpfile (by oj-bundle)"
@@ -59,6 +59,7 @@ ccmd() {
 
 # -- competitive programing function
 {{- if ne .cp.workspace "" }}
+# TODO: if move to non-exist folder, use cp-template" 
 abc() {
     local folderPath={{ .cp.workspace }}/AtCoder/ABC_Folder/ABC$1
     mkdir -p $folderPath
@@ -113,7 +114,7 @@ export REDISCLI_HISTFILE=${HOME}/.history/rediscli
 if type "go" > /dev/null 2>&1; then
     function go(){
         if [[ "$1" == "build" && -z "$2" ]]; then
-            stylingEcho "modify" "default build output directory is build/"
+            stylingEcho "modify" "(go) default build output directory is build/"
             command go build -o build/
         else
             command go "$@"
@@ -123,6 +124,9 @@ fi
 
 ## Language C++
 if type "g++" > /dev/null 2>&1; then
+    {{- if ne .cp.library "" }}
+    alias g++="g++ -I {{.cp.library}}/ac-library"
+    {{- end }}
     alias g++++="g++ -fsanitize=undefined,address -g -fno-omit-frame-pointer -Wall -Wextra -no-pie"
 fi
 
@@ -200,7 +204,17 @@ fi
 export CP_Template={{.cp.library}}/cpp/template/basic.cpp
 
 if type "cp-template" > /dev/null 2>&1; then
-    alias cpt="cp-template"
+    function cpt (){ 
+        if [ $# -eq 2 ]; then
+            stylingEcho "modify" "(cp-template) Arg:2"
+            cp-template --folder $1 --number $2
+        elif [ $# -eq 3 ]; then
+            stylingEcho "modify" "(cp-template) Arg:3"
+            cp-template --folder $1 --number $2 --style $3
+        else
+            stylingEcho "modify" "(cp-template) option argument is between 2-3"
+        fi
+    }
 fi
 {{- end }}
 
@@ -213,8 +227,14 @@ alias @="notify-send -i /usr/share/icons/Arc/status/128/dialog-information.png '
 
 alias vim="noglob nvim"
 alias vp='nvim -c ":e #<1"'
+alias vc='nvim -c ":args *.cpp | :BufferOrderByBufferNumber"'
 
 alias ce="chezmoi edit"
+
+function mkpass (){
+    pass=$(head /dev/urandom | tr -dc 'A-Za-z0-9!"#$%&amp;'\''()*+,-./:;&lt;=&gt;?@[\]^_`{|}~' | cut -c 1-16 | xsel -b)
+    echo "Password Generated"
+}
 
 
 # VBox(for vagrant)

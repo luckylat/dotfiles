@@ -1,7 +1,3 @@
-" Prevent whiteout
-seturl https://atcoder.jp/* noiframe true
-seturl https://codeforces.com/* noiframe true
-
 " Ignore pages
 autocmd DocStart ^https://hackmd.io mode ignore
 autocmd DocStart ^https://notreversi2.netlify.app/ mode ignore
@@ -11,7 +7,11 @@ autocmd DocStart ^https://www.youtube.com/* mode ignore
 autocmd DocStart ^https://github.com/* mode ignore
 autocmd DocStart ^https://qiita.com/* mode ignore
 autocmd DocStart ^https://colab.research.google.com/* mode ignore
-
+autocmd DocStart ^https://codeforces.com/* mode ignore
+autocmd DocStart ^https://atcoder.jp/* mode ignore
+autocmd DocStart ^http://locahost:8888/* mode ignore
+autocmd DocStart ^https://typing-game.web.cpctf.space mode ignore
+autocmd DocStart ^https://lightsail.aws.amazon.com/ mode ignore
 " SmoothScroll
 set smoothscroll true
 
