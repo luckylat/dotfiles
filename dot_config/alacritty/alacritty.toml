@@ -5,7 +5,7 @@ TERM = "alacritty"
 
 [font]
 normal = { family = "CommitMonoNerdFont"}
-size = 6
+size = 8
 offset = {x = 0, y = 2}
 
 [[keyboard.bindings]]
