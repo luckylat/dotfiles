@@ -59,6 +59,7 @@ ccmd() {
 
 # -- competitive programing function
 {{- if ne .cp.workspace "" }}
+# TODO: if move to non-exist folder, use cp-template" 
 abc() {
     local folderPath={{ .cp.workspace }}/AtCoder/ABC_Folder/ABC$1
     mkdir -p $folderPath
@@ -234,6 +235,7 @@ function mkpass (){
     pass=$(head /dev/urandom | tr -dc 'A-Za-z0-9!"#$%&amp;'\''()*+,-./:;&lt;=&gt;?@[\]^_`{|}~' | cut -c 1-16 | xsel -b)
     echo "Password Generated"
 }
+
 
 # VBox(for vagrant)
 if [ $USER = 'vagrant' ]; then
