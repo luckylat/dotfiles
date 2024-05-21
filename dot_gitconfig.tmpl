@@ -1,7 +1,11 @@
 # This is Git's per-user configuration file.
+{{- if eq .chezmoi.os "linux" }}
+[include]
+    path = ~/.gitconfig-private
+{{- end }}
 [user]
-	name = luckylat
-	email = lacklat.key@gmail.com
+    name = luckylat
+    email = lacklat.key@gmail.com
 [alias]
     tree =  log --graph --pretty=format:'%x09%C(auto)%h %C(cyan)%ar%Creset%x09%C(blue)%an:%x09%C(green)"%s" %C(auto)%d'
 
