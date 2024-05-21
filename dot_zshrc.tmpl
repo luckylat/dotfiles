@@ -230,6 +230,10 @@ alias vc='nvim -c ":args *.cpp | :BufferOrderByBufferNumber"'
 
 alias ce="chezmoi edit"
 
+function mkpass (){
+    pass=$(head /dev/urandom | tr -dc 'A-Za-z0-9!"#$%&amp;'\''()*+,-./:;&lt;=&gt;?@[\]^_`{|}~' | cut -c 1-16 | xsel -b)
+    echo "Password Generated"
+}
 
 # VBox(for vagrant)
 if [ $USER = 'vagrant' ]; then
