@@ -123,6 +123,9 @@ fi
 
 ## Language C++
 if type "g++" > /dev/null 2>&1; then
+    {{- if ne .cp.library "" }}
+    alias g++="g++ -I {{.cp.library}}/ac-library"
+    {{- end }}
     alias g++++="g++ -fsanitize=undefined,address -g -fno-omit-frame-pointer -Wall -Wextra -no-pie"
 fi
 
