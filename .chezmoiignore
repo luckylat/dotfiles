@@ -4,16 +4,18 @@ README.md
 {{ if ne .chezmoi.os "darwin" }} # ignore if this is not mac (i.e. ignore if this is windows or linux)
 Library
 {{ end }}
-{{ if ne .chezmoi.os "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
+{{ if ne .chezmoi.osRelease.name "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
 .config/lazygit
 
 .chezmoiscripts/linux/**
 
 # clovereal
 .config/alacritty
+{{ if ne .chezmoi.osRelease.name "Arch Linux" }}
 .config/awesome
-.config/rofi
 .config/tridactyl
+{{ end }}
+.config/rofi
 .config/zathura
 .xinitrc
 .xprofile
