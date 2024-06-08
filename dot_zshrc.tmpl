@@ -135,9 +135,6 @@ function ccgl() {
     gcc "$@" -lglut -lGLU -lGL -lm -lstdc++;
 }
 
-## Language Python
-source "$HOME/.rye/env"
-
 # git
 if type "git" > /dev/null 2>&1; then
     function git(){
