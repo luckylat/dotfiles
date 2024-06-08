@@ -9,7 +9,7 @@ Library
 .config/cp-template
 {{ end }}
 
-{{ if ne .chezmoi.osRelease.name "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
+{{ if ne .chezmoi.os "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
 .config/lazygit
 
 .chezmoiscripts/linux/**
