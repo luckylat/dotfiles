@@ -1,4 +1,5 @@
 fcitx5 &
-xscreensaver --no-splash &
+
+env LC_CTYPE="" xss-lock -- i3lock &
 
 xset -b
