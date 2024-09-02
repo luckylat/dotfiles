@@ -10,7 +10,7 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions"
-FPATH={{ .rust.cargo_completions }}:$FPATH
+# FPATH={{ .rust.cargo_completions }}:$FPATH
 autoload -Uz compinit
 compinit
 
