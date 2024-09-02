@@ -4,6 +4,9 @@ truncation_symbol = ".../"
 [ruby]
 detect_variables = []
 
+[gcloud]
+disabled = true
+
 [[battery.display]]
 threshold = 100
 style = "bold yellow"
