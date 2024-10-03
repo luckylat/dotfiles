@@ -1,5 +1,6 @@
 README.md
 .latexmkrc # currently I don't use LaTeX
+.config/tridactyl
 
 {{ if ne .chezmoi.os "darwin" }} # ignore if this is not mac (i.e. ignore if this is windows or linux)
 Library
@@ -18,7 +19,6 @@ Library
 .config/alacritty
 {{ if ne .chezmoi.osRelease.name "Arch Linux" }}
 .config/awesome
-.config/tridactyl
 {{ end }}
 .config/rofi
 .config/zathura
