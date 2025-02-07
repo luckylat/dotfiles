@@ -1,4 +1,3 @@
-import = ["/home/sakflat/.config/alacritty/alacritty-theme/themes/tokyo-night.toml"]
 
 [env]
 TERM = "alacritty"
@@ -25,3 +24,6 @@ mods = "Shift"
 
 [window]
 opacity = 0.8
+
+[general]
+import = ["/home/sakflat/.config/alacritty/alacritty-theme/themes/tokyo-night.toml"]
