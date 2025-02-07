@@ -32,7 +32,7 @@ lspconfig['ccls'].setup {
 lspconfig['gopls'].setup {}
 
 -- Ruby
-lspconfig['ruby_ls'].setup {}
+-- lspconfig['ruby_ls'].setup {}
 
 -- SATySFi
 

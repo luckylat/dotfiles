@@ -207,6 +207,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             require("widgets.awesome-wm-widgets-e.net-speed-widget.net-speed")(),
             require("widgets.awesome-wm-widgets-e.brightness-widget.brightness"){
+                program = "brightnessctl",
                 base = 25,
                 tooltip = true,
             },
