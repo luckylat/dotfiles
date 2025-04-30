@@ -81,6 +81,9 @@ plugins = {
         build = ":TSUpdate",
     },
 
+    -- -- Copilot
+    'github/copilot.vim',
+
     -- -- Utility
     'dstein64/vim-startuptime',
 

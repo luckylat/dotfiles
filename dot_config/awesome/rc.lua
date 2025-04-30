@@ -14,11 +14,15 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
+
+
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 local logout_popup = require("widgets.awesome-wm-widgets-e.logout-popup-widget.logout-popup")
 
+-- naughty configuration
+naughty.config.defaults.font = "Monospace 15"
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -190,17 +194,16 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons
     }
 
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    -- Create the first wibox
+    s.firstrowwibox = awful.wibar({ position = "top", screen = s })
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
+    s.firstrowwibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             -- mylauncher,
             s.mytaglist,
-            s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
@@ -216,9 +219,23 @@ awful.screen.connect_for_each_screen(function(s)
             -- require("widgets.panel-control"),
             -- to this point
             wibox.widget.systray(),
-            require("widgets.clock"),
             s.mylayoutbox,
         },
+    }
+
+    s.secondrowwibox = awful.wibar({ position = "bottom", screen = s, height=40 })
+    s.secondrowwibox:setup {
+        layout = wibox.layout.align.horizontal,
+        {
+            layout = wibox.layout.fixed.horizontal,
+            wibox.container.place(require("widgets.clock")),
+            s.mypromptbox,
+        },
+        nil,
+        {
+            layout = wibox.layout.fixed.horizontal,
+            require("widgets.cmus"),
+        }
     }
 end)
 -- }}}
@@ -390,7 +407,7 @@ clientkeys = gears.table.join(
     awful.key({ modkey,           }, "w", 
         function ()
             for s in screen do
-                s.mywibox.visible = not s.mywibox.visible
+                s.firstrowwibox.visible = not s.firstrowwibox.visible
             end
         end,
         {description = "toggle wibar show", group = "client"})
