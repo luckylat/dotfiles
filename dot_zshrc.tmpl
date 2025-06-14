@@ -260,13 +260,13 @@ export GPG_TTY=$TTY
 export TERM=xterm-256color
 export EDITOR=nvim
 
+
+{{ if eq .chezmoi.osRelease.name "Arch Linux" }}
 # start X
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     exec startx
 fi
 
-# load end
-echo "done."
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
@@ -275,3 +275,7 @@ echo "done."
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/sakflat/.opam/opam-init/init.zsh' ]] || source '/home/sakflat/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+{{ end }}
+
+# load end
+echo "done."

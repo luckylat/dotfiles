@@ -14,12 +14,12 @@ Library
 .config/lazygit
 
 .chezmoiscripts/linux/**
+{{ end }}
 
+{{ if ne .chezmoi.osRelease.name "Arch Linux" }}
 # clovereal
 .config/alacritty
-{{ if ne .chezmoi.osRelease.name "Arch Linux" }}
 .config/awesome
-{{ end }}
 .config/rofi
 .config/zathura
 .xinitrc
