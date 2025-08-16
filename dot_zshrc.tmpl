@@ -219,6 +219,9 @@ if type "volta" > /dev/null 2>&1; then
     export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
+if type "mise" > /dev/null 2>&1; then
+    eval "$(/home/ubuntu/.local/bin/mise activate zsh)"
+fi
 {{ if .ctf }}
 {{- if .ctf.ghidra_path -}}
 export PATH="{{.ctf.ghidra_path}}:$PATH"
@@ -226,6 +229,8 @@ export PATH="{{.ctf.ghidra_path}}:$PATH"
 {{ end }}
 
 alias @="notify-send -i /usr/share/icons/Arc/status/128/dialog-information.png 'Process Finished' 'Process Finished'"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 alias vim="noglob nvim"
 alias vp='nvim -c ":e #<1"'

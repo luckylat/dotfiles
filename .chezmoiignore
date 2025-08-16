@@ -1,36 +1,40 @@
 README.md
 .latexmkrc # currently I don't use LaTeX
+.tmux.conf
 .config/tridactyl
-
-{{ if ne .chezmoi.os "darwin" }} # ignore if this is not mac (i.e. ignore if this is windows or linux)
-Library
-{{ end }}
 
 {{ if eq .cp.library "" }}
 .config/cp-template
 {{ end }}
 
-{{ if ne .chezmoi.os "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
+{{ if eq .chezmoi.os "windows" }} # use the file only windows
+.zshrc
+{{ end }}
+{{ if ne .chezmoi.os "windows" }} # use the file only windows
+AppData
+Documents
+{{ end }}
+{{ if ne .chezmoi.os "darwin" }}  # use the file only macOS
+Library
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
 .config/lazygit
-
 .chezmoiscripts/linux/**
+
+.xprofile
 {{ end }}
 
+
 {{ if ne .chezmoi.osRelease.name "Arch Linux" }}
-# clovereal
-.config/alacritty
 .config/awesome
+.config/alacritty
 .config/rofi
 .config/zathura
 .xinitrc
 .xprofile
 {{ end }}
-{{ if ne .chezmoi.os "windows" }} # ignore if this is not windows (i.e. igrnore if this is mac or linux)
-AppData
-Documents
-{{ end }}
 
-{{ if eq .chezmoi.os "windows" }} # ignore if this is windows
+{{ if eq .chezmoi.osRelease.name "Kali GNU/Linux" }}
 .zshrc
-.tmux.conf
+.config/starship.toml
 {{ end }}
