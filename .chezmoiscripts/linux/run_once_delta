@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+set -e
+
+DELTA_VERSION=$(curl -s "https://api.github.com/repos/dandavison/delta/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
+
+if type "delta" > /dev/null 2>&1; then
+    echo Already Installed!
+    delta --version
+    return
+fi
+curl -Lo delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+
+sudo tar xf delta.tar.gz
+sudo mv delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu/delta /usr/local/bin/
+
+delta --version
+rm -rf delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu/
+rm delta.tar.gz

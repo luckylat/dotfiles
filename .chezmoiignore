@@ -1,24 +1,26 @@
 README.md
 .latexmkrc # currently I don't use LaTeX
+.tmux.conf
 .config/tridactyl
+
 {{ if eq .cp.library "" }}
 .config/cp-template
 {{ end }}
 
+{{ if eq .chezmoi.os "windows" }} # use the file only windows
+.zshrc
+{{ end }}
 {{ if ne .chezmoi.os "windows" }} # use the file only windows
 AppData
 Documents
 {{ end }}
 {{ if ne .chezmoi.os "darwin" }}  # use the file only macOS
 Library
-.zshrc
-.tmux.conf
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
 .config/lazygit
 .chezmoiscripts/linux/**
 
-.tmux.conf
 .xprofile
 {{ end }}
 

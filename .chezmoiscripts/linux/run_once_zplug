@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+set -e
+if [ -d ~/.zplug ]; then
+    echo zplug is Already Installed!
+    return
+fi
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
