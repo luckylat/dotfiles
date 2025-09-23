@@ -10,3 +10,5 @@
 ## Yarn
 .pnp.cjs
 .pnp.loader.mjs
+
+*.tmp
