@@ -21,7 +21,7 @@ local cmus = awful.widget.watch("cmus-remote -Q", 15, function(widget, stdout)
             widget_text = "Now Playing: " .. title .. " - " .. artist .. " [" .. album .. "]"
         end
     else
-        widget_text = "CMUS is not playing"
+        widget_text = ""
     end
 
     widget:set_markup("<span font='sans 20'>" .. widget_text .. "</span>")

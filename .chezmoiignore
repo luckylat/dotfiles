@@ -3,7 +3,7 @@ README.md
 .tmux.conf
 .config/tridactyl
 
-{{ if eq .cp.library "" }}
+{{ if eq (. | dig "cp" "library" "") "" }}
 .config/cp-template
 {{ end }}
 
@@ -14,10 +14,12 @@ README.md
 AppData
 Documents
 {{ end }}
-{{ if ne .chezmoi.os "darwin" }}  # use the file only macOS
+
+{{ if ne .chezmoi.os "darwin" }} # ignore if this is not mac (i.e. ignore if this is windows or linux)
 Library
 {{ end }}
-{{ if ne .chezmoi.os "linux" }}
+
+{{ if ne .chezmoi.os "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
 .config/lazygit
 .chezmoiscripts/linux/**
 

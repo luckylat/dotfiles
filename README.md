@@ -1,11 +1,26 @@
-## dotfiles
+# dotfiles
 
-### author
+## author
 luckYrat / CleyL
 
-### feature
+## feature
 using [chezmoi](https://github.com/twpayne/chezmoi)
 
-### Consutitution
+## Consutitution
 TBD (generate automatically)
+
+### chezmoi customed data configuration
+```toml
+BG="{Background Image Path}"
+
+[cp]
+library="{CP Library Path}"
+workspace="{CP Workspace Path}"
+
+[ctf]
+ghidraPath="{Ghidra Path}"
+
+[util]
+commandsFile="{Util Commands File Path}"
+```
 

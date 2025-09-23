@@ -30,7 +30,7 @@ zplug load --verbose
 
 # util function
 # -- fzf function
-{{- if ne .cp.library "" }}
+{{- if ne (. | dig "cp" "library" "") "" }}
 # library copy command for competitive programming
 ccp() {
     local cpfile
@@ -47,7 +47,7 @@ ccp() {
 }
 {{- end }}
 
-{{- if ne .util.commandsFile "" }}
+{{- if ne (. | dig "util" "commandsFile" "") "" }}
 ccmd() {
     local commandFile
 
@@ -57,7 +57,7 @@ ccmd() {
 {{- end }}
 
 # -- competitive programing function
-{{- if ne .cp.workspace "" }}
+{{- if ne (. | dig "cp" "workspace" "") "" }}
 # TODO: if move to non-exist folder, use cp-template" 
 abc() {
     local folderPath={{ .cp.workspace }}/AtCoder/ABC_Folder/ABC$1
@@ -123,7 +123,7 @@ fi
 
 ## Language C++
 if type "g++" > /dev/null 2>&1; then
-    {{- if ne .cp.library "" }}
+    {{- if ne (. | dig "cp" "library" "") "" }}
     alias g++="g++ -I {{.cp.library}}/ac-library"
     {{- end }}
     alias g++++="g++ -fsanitize=undefined,address -g -fno-omit-frame-pointer -Wall -Wextra -no-pie"
@@ -196,7 +196,7 @@ if type "satysfi" > /dev/null 2>&1; then
 fi
 
 
-{{- if ne .cp.library "" }}
+{{- if ne (. | dig "cp" "library" "") "" }}
 export CP_Template={{.cp.library}}/cpp/template/basic.cpp
 
 if type "cp-template" > /dev/null 2>&1; then
@@ -222,11 +222,10 @@ fi
 if type "mise" > /dev/null 2>&1; then
     eval "$(/home/ubuntu/.local/bin/mise activate zsh)"
 fi
-{{ if .ctf }}
-{{- if .ctf.ghidra_path -}}
-export PATH="{{.ctf.ghidra_path}}:$PATH"
-{{- end -}}
-{{ end }}
+
+{{- if ne (. | dig "ctf" "ghidraPath" "") "" }}
+export PATH="{{.ctf.ghidraPath}}:$PATH"
+{{- end }}
 
 alias @="notify-send -i /usr/share/icons/Arc/status/128/dialog-information.png 'Process Finished' 'Process Finished'"
 
