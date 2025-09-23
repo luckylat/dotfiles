@@ -37,3 +37,9 @@
 {{- end }}
 [init]
 	defaultBranch = main
+{{- if eq .chezmoi.os "linux" }}
+[credential]
+	credentialStore = gpg
+[commit]
+	gpgsign = true
+{{- end }}
