@@ -6,9 +6,10 @@ README.md
 Library
 {{ end }}
 
-{{ if eq .cp.library "" }}
+{{ if eq (. | dig "cp" "library" "") "" }}
 .config/cp-template
 {{ end }}
+
 
 {{ if ne .chezmoi.os "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
 .config/lazygit
