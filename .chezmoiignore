@@ -28,12 +28,14 @@ Library
 
 
 {{ if ne .chezmoi.osRelease.name "Arch Linux" }}
+{{ if ne (. | dig "linux" "wm" "") "awesomewm" }}
 .config/awesome
 .config/alacritty
 .config/rofi
 .config/zathura
 .xinitrc
 .xprofile
+{{ end }}
 {{ end }}
 
 {{ if eq .chezmoi.osRelease.name "Kali GNU/Linux" }}
