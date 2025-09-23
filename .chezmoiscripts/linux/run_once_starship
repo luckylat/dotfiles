@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+set -e
+if type "starship" > /dev/null 2>&1; then
+    echo Already Installed!
+    starship --version
+    return
+fi
+curl -sS https://starship.rs/install.sh | sh
+

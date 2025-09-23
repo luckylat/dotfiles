@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+set -e
+if type "zoxide" > /dev/null 2>&1; then
+    echo Already Installed!
+    lazygit --version
+    return
+fi
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
