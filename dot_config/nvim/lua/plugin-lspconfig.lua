@@ -1,35 +1,17 @@
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local lspconfig = require('lspconfig')
 local configs = require('lspconfig.configs')
 local util = require('lspconfig.util')
 
--- TypeScript
-lspconfig['tsserver'].setup {
-    capabilities = capabilities
-}
+vim.lsp.enable({
+    "tsserver",
+    "rust_analyzer",
+    "ccls",
+    "gopls"
+})
 
--- Rust
-lspconfig['rust_analyzer'].setup {
-    capabilities = capabilities,
-    settings = {
-        ['rust-analyzer'] = {},
-    },
-}
-
--- C++
-lspconfig['ccls'].setup {
-    capabilities = capabilities,
-    init_options = {
-        cache = {
-            directory = ".ccls-cache";
-        };
-    }
-}
-
--- Golang
-lspconfig['gopls'].setup {}
+vim.lsp.config('*', {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
 
 -- Ruby
 -- lspconfig['ruby_ls'].setup {}
