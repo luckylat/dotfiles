@@ -69,7 +69,10 @@ plugins = {
     'editorconfig/editorconfig-vim',
 
     -- -- LSP
-    'neovim/nvim-lspconfig',
+    { 
+        'neovim/nvim-lspconfig',
+        event = {"BufReadPre", "BufNewFile" },
+    },
 
     -- -- Auto Completion
     'hrsh7th/cmp-nvim-lsp',

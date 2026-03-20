@@ -3,6 +3,13 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
 vim.api.nvim_create_augroup('specialFileType', { clear = true })
+
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+    group = 'specialFileType',
+    pattern = { 'LsqFile' },
+    callback = function() vim.opt_local.filetype = 'yaml' end
+})
+
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
     group = 'specialFileType',
     pattern = { 'tsconfig.json' },

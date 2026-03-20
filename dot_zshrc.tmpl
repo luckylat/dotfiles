@@ -111,6 +111,7 @@ export REDISCLI_HISTFILE=${HOME}/.history/rediscli
 # alias and overlapping
 ## Language: Go
 if type "go" > /dev/null 2>&1; then
+    export PATH="$PATH:$(go env GOPATH)/bin"
     function go(){
         if [[ "$1" == "build" && -z "$2" ]]; then
             stylingEcho "modify" "(go) default build output directory is build/"
