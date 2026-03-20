@@ -21,19 +21,19 @@ Library
 
 {{ if ne .chezmoi.os "linux" }} # ignore if this is not linux (i.e. ignore if this is windows or mac)
 .config/lazygit
+.config/alacritty
+.config/rofi
+.config/zathura
+
 .chezmoiscripts/linux/**
 
+.xinitrc
 .xprofile
 {{ end }}
 
 
 {{ if ne (. | dig "linux" "wm" "") "awesomewm" }}
 .config/awesome
-.config/alacritty
-.config/rofi
-.config/zathura
-.xinitrc
-.xprofile
 {{ end }}
 
 {{ if eq .chezmoi.osRelease.name "Kali GNU/Linux" }}
