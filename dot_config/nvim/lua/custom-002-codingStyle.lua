@@ -6,12 +6,6 @@ vim.api.nvim_create_augroup('specialFileType', { clear = true })
 
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
     group = 'specialFileType',
-    pattern = { 'LsqFile' },
-    callback = function() vim.opt_local.filetype = 'yaml' end
-})
-
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-    group = 'specialFileType',
     pattern = { 'tsconfig.json' },
     callback = function() vim.opt_local.filetype = 'jsonc' end
 })
@@ -31,8 +25,8 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 -- TODO: make syntax for mdx
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
     group = 'specialFileType',
-    pattern = { '*.mdx' },
-    callback = function() vim.opt_local.filetype = 'markdown' end
+    pattern = { 'LsqFile' },
+    callback = function() vim.opt_local.filetype = 'Lsq' end
 })
 
 
@@ -54,7 +48,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 vim.api.nvim_create_autocmd('FileType', {
     group = 'languageTab',
-    pattern = { 'make' },
+    pattern = { 'make', "Lsq" },
     callback = function()
         vim.opt_local.expandtab = false
     end
